@@ -1,1 +1,294 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>NEURON — August 2026</title>  
+<style>  
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');  
+*{margin:0;padding:0;box-sizing:border-box}  
+body{font-family:'Inter',-apple-system,sans-serif;background:#faf9f6;color:#1a202c;line-height:1.7;-webkit-font-smoothing:antialiased}  
+.n-masthead{background:linear-gradient(135deg,#1a365d 0%,#2c5282 50%,#2b6cb0 100%);position:relative;overflow:hidden}  
+.n-masthead::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}  
+.n-masthead-content{padding:60px 32px 50px;text-align:center;position:relative;max-width:900px;margin:0 auto}  
+.n-masthead-emoji{font-size:48px;margin-bottom:14px;display:block}  
+.n-masthead-title{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,60px);font-weight:900;color:#fff;letter-spacing:6px;margin-bottom:4px}  
+.n-masthead-subtitle{font-size:12px;color:rgba(255,255,255,.65);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px}  
+.n-masthead-meta{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.55)}  
+.n-body{max-width:900px;margin:0 auto;padding:32px 24px 60px}  
+.n-card{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #edf2f7;margin-bottom:24px;overflow:hidden}  
+.n-card-header{padding:24px 28px 18px;border-bottom:1px solid #edf2f7;display:flex;align-items:flex-start;gap:14px}  
+.n-card-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}  
+.n-icon-blue{background:#ebf4ff}.n-icon-gold{background:#fffff0}.n-icon-teal{background:#e6fffa}.n-icon-purple{background:#faf5ff}.n-icon-green{background:#f0fff4}.n-icon-red{background:#fff5f5}.n-icon-gray{background:#f7fafc}  
+.n-card-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:800;color:#1a202c;margin-bottom:2px}  
+.n-card-subtitle{font-size:12px;color:#718096}  
+.n-card-body{padding:20px 28px 24px}  
+.n-card-body p{font-size:14px;color:#4a5568;line-height:1.7;margin-bottom:12px}  
+.n-card-body p:last-child{margin-bottom:0}  
+.n-byline{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #edf2f7}  
+.n-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1a365d,#2c5282);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px}  
+.n-byline-name{font-weight:600;font-size:13px;color:#1a202c}  
+.n-byline-role{font-size:11px;color:#718096}  
+.n-callout{border-radius:8px;padding:14px 18px;margin:14px 0;font-size:13px;line-height:1.6}  
+.n-callout strong{display:block;margin-bottom:4px}  
+.n-callout-blue{background:#ebf8ff;border-left:4px solid #3182ce;color:#2c5282}  
+.n-callout-gold{background:#fffff0;border-left:4px solid #d69e2e;color:#744210}  
+.n-callout-green{background:#f0fff4;border-left:4px solid #38a169;color:#22543d}  
+.n-callout-purple{background:#faf5ff;border-left:4px solid #805ad5;color:#44337a}  
+.n-announcement-list{list-style:none;padding:0}  
+.n-announcement-list li{padding:8px 0;border-bottom:1px solid #edf2f7;font-size:13px;color:#4a5568;display:flex;align-items:flex-start;gap:10px}  
+.n-announcement-list li:last-child{border-bottom:none}  
+.n-announcement-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:#2c5282;flex-shrink:0;margin-top:7px}  
+.n-topic-title{font-size:15px;margin-bottom:10px;color:#1a202c}  
+.n-event-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #edf2f7;align-items:flex-start}  
+.n-event-item:last-child{border-bottom:none}  
+.n-event-date{background:#1a365d;color:#fff;border-radius:6px;padding:6px 10px;text-align:center;flex-shrink:0;min-width:48px}  
+.n-event-day{font-size:18px;font-weight:800;line-height:1}.n-event-month-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;opacity:.8}  
+.n-event-title{font-weight:600;font-size:13px;color:#1a202c}.n-event-desc{font-size:12px;color:#718096}  
+.n-divider{display:flex;align-items:center;gap:14px;margin:20px 0;color:#718096;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:600}  
+.n-divider::before,.n-divider::after{content:'';flex:1;height:1px;background:#e2e8f0}  
+.n-footer{background:#1a365d;color:rgba(255,255,255,.65);padding:32px 28px}  
+.n-footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px;max-width:900px;margin-left:auto;margin-right:auto}  
+.n-footer h4{color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}  
+.n-footer p,.n-footer li{font-size:12px;line-height:1.8}  
+.n-footer ul{list-style:none;padding:0}  
+.n-footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;display:flex;justify-content:space-between;font-size:11px;max-width:900px;margin:0 auto}  
+@media(max-width:640px){.n-footer-grid{grid-template-columns:1fr}.n-masthead-content{padding:40px 20px 32px}.n-body{padding:20px 16px 40px}.n-card-header{padding:18px 20px 14px}.n-card-body{padding:16px 20px 20px}}  
+</style>  
+</head>  
+<body>  
+            <!-- MASTHEAD -->  
+            <div class="n-masthead">  
+                <div class="n-masthead-content">  
+                    <span class="n-masthead-emoji">🧠</span>  
+                    <h1 class="n-masthead-title">NEURON</h1>  
+                    <p class="n-masthead-subtitle">The Educational Newsletter for Neurology Residents at Northwell Health</p>  
+                    <div class="n-masthead-meta">  
+                        <span>📅 Volume 1 • Issue 1 • August 2026</span>  
+                        <span>✏️ Editor: Dr. Jai Shahani</span>  
+                        <span>📧 jshahani@northwell.edu</span>  
+                    </div>  
+                </div>  
+            </div>
 
+            <div class="n-body">
+
+                <!-- PD SECTION -->  
+                <div class="n-card">  
+                    <div class="n-card-header">  
+                        <div class="n-card-icon n-icon-blue">📌</div>  
+                        <div>  
+                            <div class="n-card-title">From the Program Director's Desk</div>  
+                            <div class="n-card-subtitle">Monthly message &amp; program announcements</div>  
+                        </div>  
+                    </div>  
+                    <div class="n-card-body">  
+                        <div class="n-byline">  
+                            <div class="n-avatar">PD</div>  
+                            <div>  
+                                <div class="n-byline-name">Dr. Edward Yu</div>  
+                                <div class="n-byline-role">Program Director, Neurology Residency</div>  
+                            </div>  
+                        </div>  
+                        <h3 class="n-topic-title">Topic of the Month: <em>Meditations on a New Year</em></h3>  
+                        <p>Neurology has always been a field of innovation and progress, from the first burr-hole evacuation of subdurals in Egypt during the 4th millennium BCE, to the first description of “sclérose en plaques” by Jean-Martin Charcot in 19th century Paris, to the recent non-inferiority study of rituximab compared with ocrelizumab in the New England Journal of Medicine. The progress and advancements in our field have only accelerated with the combination of genomics, artificial intelligence, and data science. While the dizzying changes may be intimidating, it is also invigorating to know all that we have learned, and all the discoveries we will make in the coming years.  </p>  
+                        <p>I applaud Dr. Jai Shahani and all the contributors in this first installment of Neuron in their ambitious project to encapsulate essential information for all residents and faculty.  I look forward to delving into each of these newsletters and learning alongside all of you the wonderful new developments in our field, and to apply this knowledge to the excellent care for our patients. </p>  
+                        <div class="n-callout n-callout-blue">  
+                            <strong>💡 Key Takeaway</strong>  
+                            Adjusting to a new role can be challenging, but your foundations from this year will remain valuable for the rest of your clinical career!  
+                        </div>  
+                        <h4 style="font-size:14px;margin:18px 0 10px;color:#1a202c;">📋 Program Updates &amp; Announcements</h4>  
+                        <ul class="n-announcement-list">  
+                            <li>Keep an eye out for monthly Wellness Events organized by Drs. Haque Shakil and Jai Shahani!</li><li>Monitor Amion closely for changes in your schedule.</li><li>Open Enrollment for benefits is coming up! Check your MyExperience tab for more information.</li>  
+                        </ul>  
+                    </div>  
+                </div>
+
+                <!-- CHIEF SECTION -->  
+                <div class="n-card">  
+                    <div class="n-card-header">  
+                        <div class="n-card-icon n-icon-gold">🎓</div>  
+                        <div>  
+                            <div class="n-card-title">Chief Resident's Corner</div>  
+                            <div class="n-card-subtitle">Clinical teaching &amp; resident challenge</div>  
+                        </div>  
+                    </div>  
+                    <div class="n-card-body">  
+                        <div class="n-byline">  
+                            <div class="n-avatar" style="background:linear-gradient(135deg,#d69e2e,#ecc94b);">CR</div>  
+                            <div>  
+                                <div class="n-byline-name">Dr. Dechen Samdrup</div>  
+                                <div class="n-byline-role">Chief Resident, PGY-4</div>  
+                            </div>  
+                        </div>  
+                        <h3 class="n-topic-title">Topic of the Month: <em>A Warm Welcome from the Administrative Chief Resident</em></h3>  
+                        <p>Every new academic year marks both a fresh beginning and an opportunity to build on the work of those who came before us. I’ve had the privilege of welcoming our incoming residents while reflecting on the many mentors and senior residents who made my own transition into neurology smoother. Their guidance has inspired me to focus on leaving behind resources that will make the journey a little easier for those who follow.</p>  
+                        <p>One project I’m especially excited about is developing an informal resident guidebook. Beyond orientation materials, this guide is intended to capture the practical advice, workflows, and day to day pearls that are often learned through experience. My hope is that it becomes a living document, one that each graduating class can continue to refine and pass along to future residents.</p>  
+                        <p>As I prepare for my final year of residency and my transition into vascular neurology fellowship, I’m excited for both the new opportunities ahead and the chance to continue strengthening the relationships we’ve built within our program and across Northwell. Most of all, I’m looking forward to welcoming our newest residents, learning alongside one another, and contributing to a culture that values collaboration, mentorship, and continuous improvement. </p>  
+                        <div class="n-callout n-callout-gold">  
+                            <strong>🧩 Resident Challenge of the Month</strong>  
+                            A 34-year-old woman with a past history of left eye optic neuritis presents with right leg weakness, right-sided loss of vibration sense, and left-sided loss of pinprick below T8. MRI reveals a contrast-enhancing T6–T7 right spinal cord lesion, but her symptoms fail to improve after 5 days of IV methylprednisolone 1,000 mg daily. What is the precise neuroanatomical syndrome, and what is the next step in acute management?   
+                        </div>  
+                        <div class="n-callout n-callout-green">  
+                            <strong>✅ Last Month's Answer</strong>  
+                            This is our inaugural issue — the first challenge answer will appear next month!  
+                        </div>  
+                    </div>  
+                </div>
+
+                <!-- THEME SECTION -->  
+                <div class="n-card">  
+                    <div class="n-card-header">  
+                        <div class="n-card-icon n-icon-teal">🔬</div>  
+                        <div>  
+                            <div class="n-card-title">Educational Theme of the Month</div>  
+                            <div class="n-card-subtitle">Monthly Focus and Clinical Pearls</div>  
+                        </div>  
+                    </div>  
+                    <div class="n-card-body">  
+                        <div class="n-divider">Specialty Focus</div>  
+                        <h3 class="n-topic-title" style="font-size: 20px; font-weight: 800; color: #1a365d;">Multiple Sclerosis and Neuroimmunology</h3>
+
+                        <h4 style="font-size:15px;color:#319795;margin: 14px 0 10px;">Monthly Topic: A Practical Guide to the New McDonald 2024 Criteria for Diagnosing Multiple Sclerosis</h4>  
+
+                        <div class="n-byline">  
+                            <div class="n-avatar" style="background:linear-gradient(135deg,#805ad5,#9f7aea);">AP</div>  
+                            <div>  
+                                <div class="n-byline-name">Dr. Daniel Gratch</div>  
+                                <div class="n-byline-role">Associate Program Director</div>  
+                            </div>  
+                        </div>  
+
+                        <p>The diagnosis of multiple sclerosis (MS) has undergone remarkable transformation over the past two decades. Historically, MS diagnosis relied exclusively on clinical symptoms, requiring evidence of attacks affecting different parts of the nervous system at different points in time. The landmark introduction of the McDonald criteria in 2001 incorporated MRI into the diagnostic framework for the first time, enabling earlier and more objective diagnosis. Subsequent revisions in 2005, 2010, and 2017 progressively refined these criteria. The 2024 revisions represent the most substantial update yet. Five key changes define this revision. First, the optic nerve is now recognized as a fifth anatomical location for demonstrating dissemination in space (DIS), assessable through MRI, optical coherence tomography, or visual evoked potentials. Second, dissemination in time (DIT) is no longer mandatory in certain diagnostic scenarios, reflecting evidence that it is less specific than originally assumed and can unnecessarily delay treatment. Third, two novel imaging biomarkers — the central vein sign (CVS) and paramagnetic rim lesions (PRL) — are formally incorporated as diagnostic tools, offering increased specificity particularly in ambiguous cases. These biomarkers emerged from the convergence of long-established neuropathological observations with advances in susceptibility-sensitive MRI. Fourth, kappa free light chains in cerebrospinal fluid are now interchangeable with oligoclonal bands, providing a more quantitative based and objective laboratory alternative. Finally, the criteria adopt a unified framework applicable across the full MS spectrum, including progressive MS, radiologically isolated syndrome (RIS), and pediatric presentations, while introducing specific guidance for patients aged 50 and older who face heightened misdiagnosis risk.</p>  
+                        <p>
+Collectively, these revisions aim to expedite diagnosis, broaden access, and reduce misdiagnosis worldwide. Critics have focused on the tradeoff between increasing sensitivity and reducing specificity, particularly with the incorporation of RIS and non-specific presentations. Seminal research has shown that only ~50% of untreated RIS patients go on to develop clinically definite MS in 10 years of observation. However, with this new framework, more patients may select unnecessary lifelong immunomodulating treatment than in previous generations. Additional concerns include the exacerbation of existing global inequities in the early diagnosis of MS, especially with introduction of new biomarkers like CVS and PRL, which require specialized high-field (i.e. 3T or higher) MRI technology unavailable in many regions. </p>
+                    </div>  
+                </div>
+
+                <!-- RESIDENT CHOICE TOPIC SPOTLIGHT -->
+                <div class="n-card">  
+                    <div class="n-card-header">  
+                        <div class="n-card-icon n-icon-teal">✍️</div>  
+                        <div>  
+                            <div class="n-card-title">Resident Spotlight &amp; Choice Topic</div>  
+                            <div class="n-card-subtitle">Resident-authored clinical write-ups &amp; reflections</div>  
+                        </div>  
+                    </div>  
+                    <div class="n-card-body">  
+                        <div class="n-byline">  
+                            <div class="n-avatar" style="background:linear-gradient(135deg,#319795,#38b2ac);">RS</div>  
+                            <div>  
+                                <div class="n-byline-name">Dr. Jai Shahani</div>  
+                                <div class="n-byline-role">PGY-3, Neurology Resident</div>  
+                            </div>  
+                        </div>  
+                        <h3 class="n-topic-title">Topic Choice: <em>Practice Guidelines for Acute Migraine Management: A Synopsis</em></h3>  
+                        <p>Migraines account for approximately 1.2 million primary complaints at emergency departments around the country every year. Its current volume and increasing incidence warrant neurology providers to revisit practice guidelines for this highly prevalent condition. Clinical trials have shown that current practice for acute migraine management is mired with heterogeneity and poor efficacy, with fewer than 25% of patients experiencing adequate treatment for their migraines after treatment in the ED.  As a result, I summarized current guidance from the American Academy of Neurology and the American Headache Society for the care of acute migraines to inform residents how to better care for migraineurs. 
+
+I utilized two published guidelines to inform my study, one published in 2016 and another from 2025 which reviewed the 2016 paper. In 2016, no medication was suggested as a “Must Offer” medication, whereas IV metoclopramide, IV prochlorperazine, and subcutaneous sumatriptan were recommended as Class B “Should Offer” medications. These medications have notable side effects and some contraindications that must be considered prior to administration, such as akathisia and drowsiness.  
+
+Of the reviewed guidelines in 2025, IV prochlorperazine and Greater Occipital Nerve Blocks were recommended as “Must Offer” interventions, while Dexketoprofen IV, Ketorolac IV, Metoclopramide IV, Sumatriptan SC, and Supraorbital Nerve Blocks were suggested as “Should Offer” (Class B) interventions. Finally, Acetylsalicylic acid IV, Chlorpromazine IV, Dexamethasone IV, Diclofenac IM, Dipyrone IV, Droperidol IM, Haloperidol IV, and Valproate IV were all recommended as “May Offer” (Class C) therapies. </p>  
+                        <p>Notably, the guidelines updated their recommendations to include IV hydromorphone as a “Must NOT Offer” (Class A) therapy and stated Diphenhydramine IV, Morphine IV, Octreotide SC/IV, and Acetaminophen IV were medications that “May NOT” (Class C) be offered. 
+
+These updated recommendations reflect the depth of progress within the field of Headache Neurology and serve as reinforcements to our clinical practice managing patients with chronic migraines. As you encounter migraineurs in the community, I encourage all neurologists to keep these guidelines in mind to better serve our patients. </p>  
+                        
+                        <div class="n-callout n-callout-green">  
+                            <strong>📌 Resident Takeaway</strong>  
+                            Consult the American Headache Society for updated guidelines on treatment of acute and chronic headaches.  
+                        </div>
+                    </div>  
+                </div>
+
+                <!-- TECH SECTION -->  
+                <div class="n-card">  
+                    <div class="n-card-header">  
+                        <div class="n-card-icon n-icon-purple">🤖</div>  
+                        <div>  
+                            <div class="n-card-title">Tech &amp; Innovation in Neurology</div>  
+                            <div class="n-card-subtitle">Artificial intelligence, digital health &amp; emerging tools</div>  
+                        </div>  
+                    </div>  
+                    <div class="n-card-body">  
+                        <h3 class="n-topic-title">This Month's Feature: <em>AI in Neurology: From Clinical Problems to Practical Solutions</em></h3>  
+                        <p>Artificial intelligence (AI) is rapidly changing how we diagnose disease, monitor patients, and organize clinical care. In neurology, its potential is especially exciting because many of our most important clinical observations—speech, gait, facial movement, eye movements, tremor, and changes on neuroimaging—can increasingly be measured and analyzed objectively.
+My current work focuses on translating these capabilities into practical tools that address real clinical problems. One project uses an agentic AI workflow to analyze neuroimaging reports from patients presenting to the emergency department with dizziness. The system evaluates CT, CT angiography, and MRI findings through specialized AI agents, with the goal of improving consistency and enabling research at a scale that would otherwise be difficult to achieve.</p>  
+                        <p>We are also exploring how these agentic workflows can be expanded beyond a single research question. By assigning specialized agents to tasks such as data extraction, classification, validation, and synthesis, we can analyze large clinical datasets more efficiently while maintaining structured human review. Similar approaches may support quality improvement, outcomes surveillance, identification of care gaps, clinical documentation review, and ongoing monitoring of new technologies introduced into practice. The broader goal is to create reusable AI frameworks that can be adapted to different neurologic diseases, clinical workflows, and institutional priorities.
+I am also developing GAITWAVE, an ambient vision platform designed to analyze components of the neurologic examination using ordinary video. The long-term goal is to objectively measure features such as gait, tremor, facial symmetry, arm movement, and speech, allowing clinicians to compare examinations over time in the clinic or potentially in the patient’s home.
+What excites me most is not AI replacing physicians, but AI extending what clinicians can observe, measure, and accomplish. The most valuable innovations will come from physicians, residents, advanced practice providers, and other frontline clinicians who understand where care is inefficient or where important information is being missed.
+You do not need to be a programmer to participate. Start with a clinical problem, ask whether technology could help address it, and collaborate with people who can turn the idea into a testable solution. Neurology offers an extraordinary environment for this type of innovation.</p>
+
+                          
+                        <h4 style="font-size:13px;margin:16px 0 6px;color:#1a202c;">📚 Recommended Reading / Listening</h4>  
+                        <ul class="n-announcement-list">  
+                            <li>https://feinstein.northwell.edu/news/artificial-intelligence-identifies-psychosis-alzheimers-disease</li>  
+                            <li>https://feinstein.northwell.edu/news/the-latest/feinstein-study-ai-wearable-predicts-patient-deterioration</li>  
+                        </ul>  
+                          
+                    </div>  
+                </div>
+
+                <!-- EVENTS SECTION -->  
+                <div class="n-card">  
+                    <div class="n-card-header">  
+                        <div class="n-card-icon n-icon-blue">📅</div>  
+                        <div>  
+                            <div class="n-card-title">Dates &amp; Deadlines</div>  
+                            <div class="n-card-subtitle">Upcoming events, conferences &amp; milestones</div>  
+                        </div>  
+                    </div>  
+                    <div class="n-card-body">  
+                          
+                            <div class="n-event-item">  
+                                <div class="n-event-date">  
+                                    <div class="n-event-day">1</div>  
+                                    <div class="n-event-month-label">May</div>  
+                                </div>  
+                                <div>  
+                                    <div class="n-event-title">2027 AAN Annual Meeting</div>  
+                                    <div class="n-event-desc">Washington, D.C.</div>  
+                                </div>  
+                            </div>  
+                          
+                            <div class="n-event-item">  
+                                <div class="n-event-date">  
+                                    <div class="n-event-day">29</div>  
+                                    <div class="n-event-month-label">September</div>  
+                                </div>  
+                                <div>  
+                                    <div class="n-event-title">2026 AANEM Annual Meeting</div>  
+                                    <div class="n-event-desc">Orlando, Florida</div>  
+                                </div>  
+                            </div>  
+                          
+                    </div>  
+                </div>
+
+            </div>
+
+            <!-- FOOTER -->  
+            <div class="n-footer">  
+                <div class="n-footer-grid">  
+                    <div>  
+                        <h4>About NEURON</h4>  
+                        <p>Produced monthly by the Northwell Health Neurology Chief Residents with faculty oversight.</p>  
+                    </div>  
+                    <div>  
+                        <h4>Editorial Board</h4>  
+                        <ul>  
+                            <li>Editor: Dr. Jai Shahani</li>  
+                            <li>Faculty: Dr. Yasir El-Sherif</li>  
+                            <li>PD: Dr. Edward Yu</li>  
+                        </ul>  
+                    </div>  
+                    <div>  
+                        <h4>Contact</h4>  
+                        <ul>  
+                            <li>📧 jshahani@northwell.edu</li>  
+                        </ul>  
+                    </div>  
+                </div>  
+                <div class="n-footer-bottom">  
+                    <span>© 2026 Northwell Health — Neurology Residency</span>  
+                </div>  
+            </div>  
+        </body></html>
