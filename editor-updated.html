@@ -1502,7 +1502,21 @@
 
                         <p>${d(data.theme.paragraph1,'[Overview and discussion of the monthly topic...]')}</p>  
                         ${data.theme.paragraph2 ? `<p>${data.theme.paragraph2}</p>` : ''}
-                    </div>  
+                    </div> 
+                    <div class="educational-diagram-area">  
+                        <h4 id="diagram-title">Key Pathway: Acute Stroke Protocol at Northwell Health</h4>  
+                        <p id="diagram-subtitle">Visual representation to aid understanding.</p>  
+                        <img id="diagram-preview" src="https://via.placeholder.com/600x300?text=Upload+Diagram+Here" alt="Educational Theme Diagram Placeholder">  
+                        <p style="font-style: italic;"><span id="diagram-caption">Fig 1: A visual overview of the Acute Stroke Management.</span></p>
+
+                    <div class="image-upload-controls">  
+                        <label for="image-upload-input">Upload a Diagram Image (Client-Side Preview Only):</label>  
+                        <input type="file" id="image-upload-input" accept="image/*">  
+                        <input type="text" id="caption-input" placeholder="Enter diagram caption (e.g., Fig 1: Description of image)">  
+                        <input type="text" id="diagram-title-input" placeholder="Enter Diagram Title">  
+                        <input type="text" id="diagram-subtitle-input" placeholder="Enter Diagram Subtitle">  
+            </div>  
+        </div>
                 </div>
 
                 <!-- RESIDENT CHOICE TOPIC SPOTLIGHT -->
@@ -1594,7 +1608,7 @@
                 <div class="n-footer-grid">  
                     <div>  
                         <h4>About NEURON</h4>  
-                        <p>Produced monthly by the Northwell Health Neurology Chief Residents with faculty oversight.</p>  
+                        <p>Produced monthly by the Northwell Health Neurology Residents with faculty oversight.</p>  
                     </div>  
                     <div>  
                         <h4>Editorial Board</h4>  
