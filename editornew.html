@@ -971,7 +971,9 @@
             attendingRole: '',
             paragraph1: '',  
             paragraph2: '',
-            paragraph3: ''
+            resource1: '',  
+            resource2: '',
+            resource3: ''
         },  
         residentChoice: {
             headerTitle: "Resident Spotlight & Choice Topic",
@@ -1224,10 +1226,11 @@
                         <label>Paragraph 2</label>  
                         <textarea rows="5" placeholder="Continued clinical insights..." oninput="update('theme','paragraph2',this.value)">${clean(data.theme.paragraph2)}</textarea>  
                     </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 3</label>  
-                        <textarea rows="5" placeholder="Continued clinical insights..." oninput="update('theme','paragraph3',this.value)">${clean(data.theme.paragraph3)}</textarea>  
-                    </div> 
+                    <hr class="field-divider">  
+                    <div class="field-section-title">📚 Recommended Resources</div>  
+                    <div class="field-group"><label>Resource 1</label><input type="text" placeholder="Link or description" value="${clean(data.theme.resource1)}" oninput="update('theme','resource1',this.value)"></div>  
+                    <div class="field-group"><label>Resource 2</label><input type="text" placeholder="Link or description" value="${clean(data.theme.resource2)}" oninput="update('theme','resource2',this.value)"></div>  
+                    <div class="field-group"><label>Resource 3</label><input type="text" placeholder="Link or description" value="${clean(data.theme.resource3)}" oninput="update('theme','resource3',this.value)"></div>  
                 `;  
                 break;
 
@@ -1507,6 +1510,15 @@
 
                         <p>${d(data.theme.paragraph1,'[Overview and discussion of the monthly topic...]')}</p>  
                         ${data.theme.paragraph2 ? `<p>${data.theme.paragraph2}</p>` : ''}
+                        
+                          ${(data.theme.resource1 || data.theme.resource2) ? `  
+                        <h4 style="font-size:13px;margin:16px 0 6px;color:#1a202c;">📚 Recommended Reading </h4>  
+                        <ul class="n-announcement-list">  
+                            ${data.theme.resource1 ? `<li>${data.theme.resource1}</li>` : ''}  
+                            ${data.theme.resource2 ? `<li>${data.theme.resource2}</li>` : ''}  
+                            ${data.theme.resource3 ? `<li>${data.theme.resource3}</li>` : ''}  
+                        </ul> 
+                    
                     </div>  
                 </div>
 
