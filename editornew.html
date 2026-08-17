@@ -970,7 +970,8 @@
             attendingAuthor: '',
             attendingRole: '',
             paragraph1: '',  
-            paragraph2: ''
+            paragraph2: '',
+            paragraph3: ''
         },  
         residentChoice: {
             headerTitle: "Resident Spotlight & Choice Topic",
@@ -1223,6 +1224,9 @@
                         <label>Paragraph 2</label>  
                         <textarea rows="5" placeholder="Continued clinical insights..." oninput="update('theme','paragraph2',this.value)">${clean(data.theme.paragraph2)}</textarea>  
                     </div>  
+                    <div class="field-group">  
+                        <label>Paragraph 3</label>  
+                        <textarea rows="5" placeholder="Continued clinical insights..." oninput="update('theme','paragraph2',this.value)">${clean(data.theme.paragraph3)}</textarea>  
                 `;  
                 break;
 
