@@ -48,7 +48,6 @@
             height: 100vh;  
         }
 
-        /* ═══════════════════ TOP TOOLBAR ═══════════════════ */  
         .toolbar {  
             height: 52px;  
             background: #16161e;  
@@ -143,9 +142,7 @@
             font-weight: 600;  
         }
 
-        .toolbar-btn.primary:hover {  
-            background: #7aa8f0;  
-        }
+        .toolbar-btn.primary:hover { background: #7aa8f0; }
 
         .toolbar-btn.success {  
             background: var(--editor-green);  
@@ -165,10 +162,7 @@
             color: #1e1e2e;  
         }
 
-        .toolbar-btn svg {  
-            width: 14px;  
-            height: 14px;  
-        }
+        .toolbar-btn svg { width: 14px; height: 14px; }
 
         .save-indicator {  
             font-size: 11px;  
@@ -180,17 +174,13 @@
             transition: opacity 0.3s;  
         }
 
-        .save-indicator.visible {  
-            opacity: 1;  
-        }
+        .save-indicator.visible { opacity: 1; }
 
-        /* ═══════════════════ LAYOUT ═══════════════════ */  
         .editor-layout {  
             display: flex;  
             height: calc(100vh - 52px);  
         }
 
-        /* ── Sidebar ── */  
         .sidebar {  
             width: 260px;  
             background: #16161e;  
@@ -236,9 +226,7 @@
             border: 1px solid transparent;  
         }
 
-        .sidebar-item:hover {  
-            background: var(--editor-surface);  
-        }
+        .sidebar-item:hover { background: var(--editor-surface); }
 
         .sidebar-item.active {  
             background: var(--editor-surface);  
@@ -292,7 +280,6 @@
             transition: width 0.5s ease;  
         }
 
-        /* ── Editor Pane ── */  
         .editor-pane {  
             flex: 1;  
             display: flex;  
@@ -329,10 +316,7 @@
         .editor-scroll::-webkit-scrollbar-track { background: transparent; }  
         .editor-scroll::-webkit-scrollbar-thumb { background: var(--editor-border); border-radius: 4px; }
 
-        /* ── Form Fields ── */  
-        .field-group {  
-            margin-bottom: 24px;  
-        }
+        .field-group { margin-bottom: 24px; }
 
         .field-group label {  
             display: block;  
@@ -346,6 +330,7 @@
 
         .field-group input[type="text"],  
         .field-group input[type="email"],  
+        .field-group input[type="url"],  
         .field-group input[type="date"],  
         .field-group input[type="number"],  
         .field-group select {  
@@ -405,7 +390,6 @@
             gap: 8px;  
         }
 
-        /* ── Repeater Groups ── */  
         .repeater-item {  
             background: rgba(40, 40, 64, 0.5);  
             border: 1px solid var(--editor-border);  
@@ -461,7 +445,26 @@
             background: rgba(137, 180, 250, 0.08);  
         }
 
-        /* ── Preview Pane ── */  
+        .add-btn:disabled {  
+            opacity: 0.35;  
+            cursor: not-allowed;  
+        }
+
+        .add-btn:disabled:hover {  
+            border-color: var(--editor-border);  
+            background: transparent;  
+        }
+
+        .reading-badge {  
+            font-size: 10px;  
+            font-weight: 700;  
+            background: var(--editor-accent);  
+            color: #1e1e2e;  
+            padding: 2px 8px;  
+            border-radius: 10px;  
+            margin-left: 8px;  
+        }
+
         .preview-pane {  
             flex: 1;  
             background: #f0eeeb;  
@@ -490,7 +493,7 @@
             gap: 6px;  
         }
 
-        .preview-controls { display: flex; gap: 4px; }  
+        .preview-controls { display: flex; gap: 4px; }
 
         .preview-scale-btn {  
             padding: 4px 10px;  
@@ -533,7 +536,6 @@
             transition: transform 0.2s ease;  
         }
 
-        /* ═══════════════════ NEWSLETTER PREVIEW STYLES ═══════════════════ */  
         .preview-frame .n-masthead {  
             background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #2b6cb0 100%);  
             position: relative;  
@@ -554,56 +556,14 @@
         }
 
         .preview-frame .n-masthead-emoji { font-size: 40px; margin-bottom: 12px; display: block; }  
-        .preview-frame .n-masthead-title {  
-            font-family: 'Playfair Display', serif;  
-            font-size: 48px;  
-            font-weight: 900;  
-            color: #fff;  
-            letter-spacing: 5px;  
-            margin-bottom: 4px;  
-        }  
-        .preview-frame .n-masthead-subtitle {  
-            font-size: 11px;  
-            color: rgba(255,255,255,0.65);  
-            letter-spacing: 2.5px;  
-            text-transform: uppercase;  
-            margin-bottom: 16px;  
-        }  
-        .preview-frame .n-masthead-meta {  
-            display: flex;  
-            justify-content: center;  
-            gap: 20px;  
-            flex-wrap: wrap;  
-            font-size: 12px;  
-            color: rgba(255,255,255,0.55);  
-        }  
+        .preview-frame .n-masthead-title { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; color: #fff; letter-spacing: 5px; margin-bottom: 4px; }  
+        .preview-frame .n-masthead-subtitle { font-size: 11px; color: rgba(255,255,255,0.65); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }  
+        .preview-frame .n-masthead-meta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: 12px; color: rgba(255,255,255,0.55); }
 
         .preview-frame .n-body { padding: 28px 28px 48px; max-width: 100%; }  
-        .preview-frame .n-card {  
-            background: #fff;  
-            border-radius: 12px;  
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);  
-            border: 1px solid #edf2f7;  
-            margin-bottom: 24px;  
-            overflow: hidden;  
-        }  
-        .preview-frame .n-card-header {  
-            padding: 24px 28px 18px;  
-            border-bottom: 1px solid #edf2f7;  
-            display: flex;  
-            align-items: flex-start;  
-            gap: 14px;  
-        }  
-        .preview-frame .n-card-icon {  
-            width: 40px;  
-            height: 40px;  
-            border-radius: 8px;  
-            display: flex;  
-            align-items: center;  
-            justify-content: center;  
-            font-size: 18px;  
-            flex-shrink: 0;  
-        }  
+        .preview-frame .n-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #edf2f7; margin-bottom: 24px; overflow: hidden; }  
+        .preview-frame .n-card-header { padding: 24px 28px 18px; border-bottom: 1px solid #edf2f7; display: flex; align-items: flex-start; gap: 14px; }  
+        .preview-frame .n-card-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
 
         .preview-frame .n-icon-blue { background: #ebf4ff; }  
         .preview-frame .n-icon-gold { background: #fffff0; }  
@@ -611,144 +571,60 @@
         .preview-frame .n-icon-purple { background: #faf5ff; }  
         .preview-frame .n-icon-green { background: #f0fff4; }  
         .preview-frame .n-icon-red { background: #fff5f5; }  
-        .preview-frame .n-icon-gray { background: #f7fafc; }  
+        .preview-frame .n-icon-gray { background: #f7fafc; }
 
-        .preview-frame .n-card-title {  
-            font-family: 'Playfair Display', serif;  
-            font-size: 19px;  
-            font-weight: 800;  
-            color: #1a202c;  
-            margin-bottom: 2px;  
-        }  
+        .preview-frame .n-card-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 800; color: #1a202c; margin-bottom: 2px; }  
         .preview-frame .n-card-subtitle { font-size: 12px; color: #718096; }  
         .preview-frame .n-card-body { padding: 20px 28px 24px; }  
         .preview-frame .n-card-body p { font-size: 14px; color: #4a5568; line-height: 1.7; margin-bottom: 12px; }  
-        .preview-frame .n-card-body p:last-child { margin-bottom: 0; }  
+        .preview-frame .n-card-body p:last-child { margin-bottom: 0; }
 
-        .preview-frame .n-byline {  
-            display: flex;  
-            align-items: center;  
-            gap: 10px;  
-            margin-bottom: 16px;  
-            padding-bottom: 14px;  
-            border-bottom: 1px solid #edf2f7;  
-        }  
-        .preview-frame .n-avatar {  
-            width: 36px;  
-            height: 36px;  
-            border-radius: 50%;  
-            background: linear-gradient(135deg, #1a365d, #2c5282);  
-            display: flex;  
-            align-items: center;  
-            justify-content: center;  
-            color: #fff;  
-            font-weight: 700;  
-            font-size: 12px;  
-        }  
+        .preview-frame .n-byline { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid #edf2f7; }  
+        .preview-frame .n-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #1a365d, #2c5282); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 12px; }  
         .preview-frame .n-byline-name { font-weight: 600; font-size: 13px; color: #1a202c; }  
-        .preview-frame .n-byline-role { font-size: 11px; color: #718096; }  
+        .preview-frame .n-byline-role { font-size: 11px; color: #718096; }
 
         .preview-frame .n-callout { border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 13px; line-height: 1.6; }  
         .preview-frame .n-callout-blue { background: #ebf8ff; border-left: 4px solid #3182ce; color: #2c5282; }  
         .preview-frame .n-callout-gold { background: #fffff0; border-left: 4px solid #d69e2e; color: #744210; }  
         .preview-frame .n-callout-green { background: #f0fff4; border-left: 4px solid #38a169; color: #22543d; }  
         .preview-frame .n-callout-purple { background: #faf5ff; border-left: 4px solid #805ad5; color: #44337a; }  
-        .preview-frame .n-callout strong { display: block; margin-bottom: 4px; }  
+        .preview-frame .n-callout strong { display: block; margin-bottom: 4px; }
 
         .preview-frame .n-announcement-list { list-style: none; padding: 0; }  
-        .preview-frame .n-announcement-list li {  
-            padding: 8px 0;  
-            border-bottom: 1px solid #edf2f7;  
-            font-size: 13px;  
-            color: #4a5568;  
-            display: flex;  
-            align-items: flex-start;  
-            gap: 10px;  
-        }  
+        .preview-frame .n-announcement-list li { padding: 8px 0; border-bottom: 1px solid #edf2f7; font-size: 13px; color: #4a5568; display: flex; align-items: flex-start; gap: 10px; }  
         .preview-frame .n-announcement-list li:last-child { border-bottom: none; }  
-        .preview-frame .n-announcement-list li::before {  
-            content: '';  
-            width: 5px;  
-            height: 5px;  
-            border-radius: 50%;  
-            background: #2c5282;  
-            flex-shrink: 0;  
-            margin-top: 7px;  
-        }  
+        .preview-frame .n-announcement-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #2c5282; flex-shrink: 0; margin-top: 7px; }
 
-        .preview-frame .n-topic-title { font-size: 15px; margin-bottom: 10px; color: #1a202c; }  
+        .preview-frame .n-topic-title { font-size: 15px; margin-bottom: 10px; color: #1a202c; }
 
-        .preview-frame .n-event-item {  
-            display: flex;  
-            gap: 14px;  
-            padding: 12px 0;  
-            border-bottom: 1px solid #edf2f7;  
-            align-items: flex-start;  
-        }  
+        .preview-frame .n-event-item { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid #edf2f7; align-items: flex-start; }  
         .preview-frame .n-event-item:last-child { border-bottom: none; }  
-        .preview-frame .n-event-date {  
-            background: #1a365d;  
-            color: #fff;  
-            border-radius: 6px;  
-            padding: 6px 10px;  
-            text-align: center;  
-            flex-shrink: 0;  
-            min-width: 48px;  
-        }  
+        .preview-frame .n-event-date { background: #1a365d; color: #fff; border-radius: 6px; padding: 6px 10px; text-align: center; flex-shrink: 0; min-width: 48px; }  
         .preview-frame .n-event-day { font-size: 18px; font-weight: 800; line-height: 1; }  
         .preview-frame .n-event-month-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }  
         .preview-frame .n-event-title { font-weight: 600; font-size: 13px; color: #1a202c; }  
-        .preview-frame .n-event-desc { font-size: 12px; color: #718096; }  
+        .preview-frame .n-event-desc { font-size: 12px; color: #718096; }
 
-        .preview-frame .n-divider {  
-            display: flex;  
-            align-items: center;  
-            gap: 14px;  
-            margin: 20px 0;  
-            color: #718096;  
-            font-size: 10px;  
-            text-transform: uppercase;  
-            letter-spacing: 1.5px;  
-            font-weight: 600;  
-        }  
-        .preview-frame .n-divider::before,  
-        .preview-frame .n-divider::after {  
-            content: '';  
-            flex: 1;  
-            height: 1px;  
-            background: #e2e8f0;  
-        }  
+        .preview-frame .n-divider { display: flex; align-items: center; gap: 14px; margin: 20px 0; color: #718096; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }  
+        .preview-frame .n-divider::before, .preview-frame .n-divider::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
 
-        .preview-frame .n-footer {  
-            background: #1a365d;  
-            color: rgba(255,255,255,0.65);  
-            padding: 32px 28px;  
-        }  
-        .preview-frame .n-footer-grid {  
-            display: grid;  
-            grid-template-columns: repeat(3, 1fr);  
-            gap: 24px;  
-            margin-bottom: 24px;  
-        }  
-        .preview-frame .n-footer h4 {  
-            color: #fff;  
-            font-size: 11px;  
-            text-transform: uppercase;  
-            letter-spacing: 1.5px;  
-            margin-bottom: 8px;  
-        }  
-        .preview-frame .n-footer p,  
-        .preview-frame .n-footer li { font-size: 12px; line-height: 1.8; }  
+        .preview-frame .n-footer { background: #1a365d; color: rgba(255,255,255,0.65); padding: 32px 28px; }  
+        .preview-frame .n-footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }  
+        .preview-frame .n-footer h4 { color: #fff; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }  
+        .preview-frame .n-footer p, .preview-frame .n-footer li { font-size: 12px; line-height: 1.8; }  
         .preview-frame .n-footer ul { list-style: none; padding: 0; }  
-        .preview-frame .n-footer-bottom {  
-            border-top: 1px solid rgba(255,255,255,0.1);  
-            padding-top: 16px;  
-            display: flex;  
-            justify-content: space-between;  
-            font-size: 11px;  
-        }  
+        .preview-frame .n-footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; display: flex; justify-content: space-between; font-size: 11px; }
 
-        /* ═══════════════════ RESIZER ═══════════════════ */  
+        .preview-frame .n-reading-list { margin-top: 18px; }  
+        .preview-frame .n-reading-item { padding: 10px 0 10px 14px; border-left: 3px solid #319795; margin-bottom: 10px; }  
+        .preview-frame .n-reading-item:last-child { margin-bottom: 0; }  
+        .preview-frame .n-reading-title { font-weight: 600; font-size: 13px; color: #1a365d; }  
+        .preview-frame .n-reading-title a { color: #1a365d; text-decoration: none; }  
+        .preview-frame .n-reading-title a:hover { text-decoration: underline; color: #319795; }  
+        .preview-frame .n-reading-meta { font-size: 11px; color: #718096; font-style: italic; }  
+        .preview-frame .n-reading-annotation { font-size: 12px; color: #4a5568; margin-top: 2px; }
+
         .pane-resizer {  
             width: 6px;  
             background: var(--editor-border);  
@@ -758,17 +634,8 @@
             position: relative;  
         }  
         .pane-resizer:hover, .pane-resizer.dragging { background: var(--editor-accent); }  
-        .pane-resizer::after {  
-            content: '⋮';  
-            position: absolute;  
-            top: 50%;  
-            left: 50%;  
-            transform: translate(-50%, -50%);  
-            color: var(--text-muted);  
-            font-size: 12px;  
-        }  
+        .pane-resizer::after { content: '⋮'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--text-muted); font-size: 12px; }
 
-        /* ═══════════════════ TOAST ═══════════════════ */  
         .toast {  
             position: fixed;  
             bottom: 24px;  
@@ -790,23 +657,21 @@
         }  
         .toast.visible { transform: translateX(-50%) translateY(0); }  
         .toast.success { border-color: var(--editor-green); }  
-        .toast.error { border-color: var(--editor-red); }  
+        .toast.error { border-color: var(--editor-red); }
 
-        /* ═══════════════════ RESPONSIVE ═══════════════════ */  
         @media (max-width: 1100px) { .sidebar { width: 220px; } }  
         @media (max-width: 900px) { .sidebar { display: none; } .toolbar-center { display: none; } }  
     </style>  
 </head>  
 <body>
 
-    <!-- ═══════════════════ TOOLBAR ═══════════════════ -->  
     <div class="toolbar">  
         <div class="toolbar-left">  
             <div class="toolbar-brand">  
                 🧠 NEURON <span class="badge">Editor</span>  
             </div>  
             <div class="toolbar-divider"></div>  
-            <span class="toolbar-section-label" id="currentSectionLabel">Masthead</span>  
+            <span class="toolbar-section-label" id="currentSectionLabel">Masthead & Meta</span>  
         </div>  
         <div class="toolbar-center">  
             <span class="save-indicator" id="saveIndicator">  
@@ -834,10 +699,7 @@
         </div>  
     </div>
 
-    <!-- ═══════════════════ MAIN LAYOUT ═══════════════════ -->  
-    <div class="editor-layout">
-
-        <!-- ── Sidebar ── -->  
+    <div class="editor-layout">  
         <aside class="sidebar">  
             <div class="sidebar-header">  
                 <h3>Newsletter Sections</h3>  
@@ -887,20 +749,15 @@
             </div>  
         </aside>
 
-        <!-- ── Editor Pane ── -->  
         <div class="editor-pane" id="editorPane">  
             <div class="editor-pane-header">  
                 <h2 id="editorTitle">📰 Masthead & Meta</h2>  
             </div>  
-            <div class="editor-scroll" id="editorScroll">  
-                <!-- Dynamic form content injected here -->  
-            </div>  
+            <div class="editor-scroll" id="editorScroll"></div>  
         </div>
 
-        <!-- ── Resizer ── -->  
         <div class="pane-resizer" id="paneResizer"></div>
 
-        <!-- ── Preview Pane ── -->  
         <div class="preview-pane" id="previewPane">  
             <div class="preview-header">  
                 <h3>👁️ Live Preview</h3>  
@@ -911,25 +768,21 @@
                 </div>  
             </div>  
             <div class="preview-scroll" id="previewScroll">  
-                <div class="preview-frame" id="previewFrame">  
-                    <!-- Live preview rendered here -->  
-                </div>  
+                <div class="preview-frame" id="previewFrame"></div>  
             </div>  
         </div>  
     </div>
 
-    <!-- ═══════════════════ TOAST ═══════════════════ -->  
     <div class="toast" id="toast"></div>
 
-    <!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->  
     <script>  
-    // ═══════════════════════════════════════════════════════  
-    // DATA MODEL  
-    // ═══════════════════════════════════════════════════════  
-    let data = {  
+    var MAX_READINGS = 3;  
+    var MIN_READINGS = 1;
+
+    var data = {  
         masthead: {  
-            title: 'NEURON',
-            subtitle: 'Northwell Education & Updates in Residency-Oriented Neurology',
+            title: 'NEURON',  
+            subtitle: 'Northwell Education & Updates in Residency-Oriented Neurology',  
             volume: '1',  
             issue: '1',  
             month: 'July',  
@@ -939,8 +792,8 @@
             email: 'neuron@northwell.edu'  
         },  
         pd: {  
-            headerTitle: "From the Program Director's Desk",
-            headerSubtitle: "Monthly message & program announcements",
+            headerTitle: "From the Program Director's Desk",  
+            headerSubtitle: 'Monthly message & program announcements',  
             name: '',  
             topicTitle: '',  
             paragraph1: '',  
@@ -949,8 +802,8 @@
             announcements: ['', '', '']  
         },  
         chief: {  
-            headerTitle: "Chief Resident's Corner",
-            headerSubtitle: "Clinical teaching & resident challenge",
+            headerTitle: "Chief Resident's Corner",  
+            headerSubtitle: 'Clinical teaching & resident challenge',  
             name: '',  
             pgyLevel: '4',  
             topicTitle: '',  
@@ -961,33 +814,34 @@
             lastAnswer: 'This is our inaugural issue — the first challenge answer will appear next month!'  
         },  
         theme: {  
-            headerTitle: "Educational Theme of the Month",
-            headerSubtitle: "Monthly clinical focus & educational highlights",
+            headerTitle: 'Educational Theme of the Month',  
+            headerSubtitle: 'Monthly clinical focus & educational highlights',  
             themeTitle: 'Stroke & Cerebrovascular Neurology',  
             themeSubtitle: 'Monthly Focus',  
             topicTitle: '',  
-            specialty: '',
-            attendingAuthor: '',
-            attendingRole: '',
+            specialty: '',  
+            attendingAuthor: '',  
+            attendingRole: '',  
             paragraph1: '',  
-            paragraph2: '',
-            resource1: '',  
-            resource2: '',
-            resource3: ''
+            paragraph2: '',  
+            paragraph3: '',  
+            recommendedReading: [  
+                { title: '', authors: '', source: '', url: '', annotation: '' }  
+            ]  
         },  
-        residentChoice: {
-            headerTitle: "Resident Spotlight & Choice Topic",
-            headerSubtitle: "Resident-authored clinical write-ups & reflections",
-            residentName: '',
-            residentPGY: '2',
-            topicTitle: '',
-            paragraph1: '',
-            paragraph2: '',
-            keyTakeaway: ''
-        },
+        residentChoice: {  
+            headerTitle: 'Resident Spotlight & Choice Topic',  
+            headerSubtitle: 'Resident-authored clinical write-ups & reflections',  
+            residentName: '',  
+            residentPGY: '2',  
+            topicTitle: '',  
+            paragraph1: '',  
+            paragraph2: '',  
+            keyTakeaway: ''  
+        },  
         tech: {  
-            headerTitle: "Tech & Innovation in Neurology",
-            headerSubtitle: "Artificial intelligence, digital health & emerging tools",
+            headerTitle: 'Tech & Innovation in Neurology',  
+            headerSubtitle: 'Artificial intelligence, digital health & emerging tools',  
             featureTitle: '',  
             paragraph1: '',  
             paragraph2: '',  
@@ -998,345 +852,243 @@
             { day: '', month: '', title: '', desc: '' },  
             { day: '', month: '', title: '', desc: '' },  
             { day: '', month: '', title: '', desc: '' }  
-        ] 
+        ]  
     };
 
-    const sectionLabels = {  
+    var sectionLabels = {  
         masthead: '📰 Masthead & Meta',  
         pd: '📌 Program Director',  
-        chief: '🎓 Chief\'s Corner',  
+        chief: "🎓 Chief's Corner",  
         theme: '🔬 Educational Theme',  
-        residentChoice: '✍️ Resident Choice Topic',
+        residentChoice: '✍️ Resident Choice Topic',  
         tech: '🤖 Tech & AI',  
-        events: '📅 Events & Dates'
+        events: '📅 Events & Dates'  
     };
 
-    let currentSection = 'masthead';  
+    var currentSection = 'masthead';
 
-    // ═══════════════════════════════════════════════════════  
-    // FORM RENDERING  
-    // ═══════════════════════════════════════════════════════  
+    function clean(str) {  
+        if (!str) return '';  
+        return String(str).replace(/"/g, '"');  
+    }
+
+    function d(val, placeholder) {  
+        return val && String(val).trim() ? val : '<span style="opacity:0.4;font-style:italic;">' + placeholder + '</span>';  
+    }
+
+    function ensureReadingData() {  
+        if (!data.theme.recommendedReading || !Array.isArray(data.theme.recommendedReading)) {  
+            data.theme.recommendedReading = [{ title: '', authors: '', source: '', url: '', annotation: '' }];  
+        }  
+    }
+
+    function buildReadingEntryHTML(r, i) {  
+        var canRemove = data.theme.recommendedReading.length > MIN_READINGS;  
+        var removeBtn = canRemove ? '<button class="remove-btn" onclick="removeReading(' + i + ')">×</button>' : '';
+
+        return '<div class="repeater-item">' +  
+            removeBtn +  
+            '<div class="field-group" style="margin-bottom:10px;">' +  
+                '<label>Article ' + (i + 1) + ' — Title *</label>' +  
+                '<input type="text" placeholder="e.g., Management of Status Epilepticus" value="' + clean(r.title) + '" oninput="updateReading(' + i + ',\'title\',this.value)">' +  
+            '</div>' +  
+            '<div class="field-row" style="margin-bottom:10px;">' +  
+                '<div class="field-group" style="margin:0;">' +  
+                    '<label>Author(s)</label>' +  
+                    '<input type="text" placeholder="e.g., Brophy GM, et al." value="' + clean(r.authors) + '" oninput="updateReading(' + i + ',\'authors\',this.value)">' +  
+                '</div>' +  
+                '<div class="field-group" style="margin:0;">' +  
+                    '<label>Source / Journal</label>' +  
+                    '<input type="text" placeholder="e.g., Neurocrit Care, 2023" value="' + clean(r.source) + '" oninput="updateReading(' + i + ',\'source\',this.value)">' +  
+                '</div>' +  
+            '</div>' +  
+            '<div class="field-group" style="margin-bottom:10px;">' +  
+                '<label>URL (optional)</label>' +  
+                '<input type="url" placeholder="https://doi.org/..." value="' + clean(r.url) + '" oninput="updateReading(' + i + ',\'url\',this.value)">' +  
+            '</div>' +  
+            '<div class="field-group" style="margin:0;">' +  
+                '<label>Annotation</label>' +  
+                '<textarea rows="2" placeholder="Brief note on why this article is recommended..." oninput="updateReading(' + i + ',\'annotation\',this.value)">' + clean(r.annotation) + '</textarea>' +  
+            '</div>' +  
+        '</div>';  
+    }
+
     function renderEditor(section) {  
-        const scroll = document.getElementById('editorScroll');  
-        const title = document.getElementById('editorTitle');  
-        title.innerHTML = sectionLabels[section];  
-        document.getElementById('currentSectionLabel').textContent = sectionLabels[section].replace(/[^\w\s&]/g, '').trim();
+        var scroll = document.getElementById('editorScroll');  
+        var title = document.getElementById('editorTitle');  
+        title.textContent = sectionLabels[section];  
+        var sectionLabel = document.getElementById('currentSectionLabel');  
+        if (sectionLabel) {  
+            sectionLabel.textContent = sectionLabels[section].replace(/[^\w\s&']/g, '').trim();  
+        }
 
-        let html = '';
+        var html = '';
 
-        switch(section) {  
-            case 'masthead':  
-                html = `  
-                    <div class="field-section-title">📰 Masthead Titles</div>  
-                    <div class="field-group">  
-                        <label>Main Newsletter Title</label>  
-                        <input type="text" value="${clean(data.masthead.title)}" oninput="update('masthead','title',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Newsletter Subtitle</label>  
-                        <input type="text" value="${clean(data.masthead.subtitle)}" oninput="update('masthead','subtitle',this.value)">  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">📅 Issue Information</div>  
-                    <div class="field-row">  
-                        <div class="field-group">  
-                            <label>Volume</label>  
-                            <input type="text" value="${clean(data.masthead.volume)}" oninput="update('masthead','volume',this.value)">  
-                        </div>  
-                        <div class="field-group">  
-                            <label>Issue</label>  
-                            <input type="text" value="${clean(data.masthead.issue)}" oninput="update('masthead','issue',this.value)">  
-                        </div>  
-                    </div>  
-                    <div class="field-row">  
-                        <div class="field-group">  
-                            <label>Month</label>  
-                            <select onchange="update('masthead','month',this.value)">  
-                                ${['January','February','March','April','May','June','July','August','September','October','November','December'].map(m => `<option ${data.masthead.month===m?'selected':''}>${m}</option>`).join('')}  
-                            </select>  
-                        </div>  
-                        <div class="field-group">  
-                            <label>Year</label>  
-                            <input type="text" value="${clean(data.masthead.year)}" oninput="update('masthead','year',this.value)">  
-                        </div>  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">👥 Editorial Team</div>  
-                    <div class="field-group">  
-                        <label>Editor (Chief Resident Name)</label>  
-                        <input type="text" placeholder="Dr. Jane Smith" value="${clean(data.masthead.editor)}" oninput="update('masthead','editor',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Faculty Advisor</label>  
-                        <input type="text" placeholder="Dr. John Doe, MD" value="${clean(data.masthead.facultyAdvisor)}" oninput="update('masthead','facultyAdvisor',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Contact Email</label>  
-                        <input type="email" value="${clean(data.masthead.email)}" oninput="update('masthead','email',this.value)">  
-                    </div>  
-                `;  
-                break;
+        if (section === 'masthead') {  
+            html =  
+                '<div class="field-section-title">📰 Masthead Titles</div>' +  
+                '<div class="field-group">' +  
+                    '<label>Main Newsletter Title</label>' +  
+                    '<input type="text" value="' + clean(data.masthead.title) + '" oninput="update(\'masthead\',\'title\',this.value)">' +  
+                '</div>' +  
+                '<div class="field-group">' +  
+                    '<label>Newsletter Subtitle</label>' +  
+                    '<input type="text" value="' + clean(data.masthead.subtitle) + '" oninput="update(\'masthead\',\'subtitle\',this.value)">' +  
+                '</div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">📅 Issue Information</div>' +  
+                '<div class="field-row">' +  
+                    '<div class="field-group"><label>Volume</label><input type="text" value="' + clean(data.masthead.volume) + '" oninput="update(\'masthead\',\'volume\',this.value)"></div>' +  
+                    '<div class="field-group"><label>Issue</label><input type="text" value="' + clean(data.masthead.issue) + '" oninput="update(\'masthead\',\'issue\',this.value)"></div>' +  
+                '</div>' +  
+                '<div class="field-row">' +  
+                    '<div class="field-group"><label>Month</label><select onchange="update(\'masthead\',\'month\',this.value)">' +  
+                        ['January','February','March','April','May','June','July','August','September','October','November','December'].map(function(m) { return '<option' + (data.masthead.month===m?' selected':'') + '>' + m + '</option>'; }).join('') +  
+                    '</select></div>' +  
+                    '<div class="field-group"><label>Year</label><input type="text" value="' + clean(data.masthead.year) + '" oninput="update(\'masthead\',\'year\',this.value)"></div>' +  
+                '</div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">👥 Editorial Team</div>' +  
+                '<div class="field-group"><label>Editor (Chief Resident Name)</label><input type="text" placeholder="Dr. Jane Smith" value="' + clean(data.masthead.editor) + '" oninput="update(\'masthead\',\'editor\',this.value)"></div>' +  
+                '<div class="field-group"><label>Faculty Advisor</label><input type="text" placeholder="Dr. John Doe, MD" value="' + clean(data.masthead.facultyAdvisor) + '" oninput="update(\'masthead\',\'facultyAdvisor\',this.value)"></div>' +  
+                '<div class="field-group"><label>Contact Email</label><input type="email" value="' + clean(data.masthead.email) + '" oninput="update(\'masthead\',\'email\',this.value)"></div>';
 
-            case 'pd':  
-                html = `  
-                    <div class="field-section-title">✏️ Section Header Titles</div>
-                    <div class="field-group">  
-                        <label>Section Header Title</label>  
-                        <input type="text" value="${clean(data.pd.headerTitle)}" oninput="update('pd','headerTitle',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Section Subtitle</label>  
-                        <input type="text" value="${clean(data.pd.headerSubtitle)}" oninput="update('pd','headerSubtitle',this.value)">  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">👤 Program Director Info</div>  
-                    <div class="field-group">  
-                        <label>Program Director Name</label>  
-                        <input type="text" placeholder="Dr. [Name]" value="${clean(data.pd.name)}" oninput="update('pd','name',this.value)">  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">📝 Topic of the Month</div>  
-                    <div class="field-group">  
-                        <label>Topic Title</label>  
-                        <input type="text" placeholder="e.g., The Art of the Neurological Exam..." value="${clean(data.pd.topicTitle)}" oninput="update('pd','topicTitle',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 1</label>  
-                        <textarea rows="5" placeholder="Write the opening message..." oninput="update('pd','paragraph1',this.value)">${clean(data.pd.paragraph1)}</textarea>  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 2</label>  
-                        <textarea rows="5" placeholder="Continue the message..." oninput="update('pd','paragraph2',this.value)">${clean(data.pd.paragraph2)}</textarea>  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Key Takeaway</label>  
-                        <input type="text" placeholder="Residents should..." value="${clean(data.pd.keyTakeaway)}" oninput="update('pd','keyTakeaway',this.value)">  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">📋 Announcements</div>  
-                    <div id="announcementsContainer">  
-                        ${data.pd.announcements.map((a, i) => `  
-                            <div class="repeater-item">  
-                                <button class="remove-btn" onclick="removeAnnouncement(${i})">×</button>  
-                                <div class="field-group" style="margin:0;">  
-                                    <label>Announcement ${i+1}</label>  
-                                    <input type="text" placeholder="e.g., Schedule change..." value="${clean(a)}" oninput="updateAnnouncement(${i},this.value)">  
-                                </div>  
-                            </div>  
-                        `).join('')}  
-                    </div>  
-                    <button class="add-btn" onclick="addAnnouncement()">+ Add Announcement</button>  
-                `;  
-                break;
+        } else if (section === 'pd') {  
+            var annHtml = '';  
+            for (var ai = 0; ai < data.pd.announcements.length; ai++) {  
+                annHtml += '<div class="repeater-item"><button class="remove-btn" onclick="removeAnnouncement(' + ai + ')">×</button><div class="field-group" style="margin:0;"><label>Announcement ' + (ai+1) + '</label><input type="text" placeholder="e.g., Schedule change..." value="' + clean(data.pd.announcements[ai]) + '" oninput="updateAnnouncement(' + ai + ',this.value)"></div></div>';  
+            }  
+            html =  
+                '<div class="field-section-title">✏️ Section Header Titles</div>' +  
+                '<div class="field-group"><label>Section Header Title</label><input type="text" value="' + clean(data.pd.headerTitle) + '" oninput="update(\'pd\',\'headerTitle\',this.value)"></div>' +  
+                '<div class="field-group"><label>Section Subtitle</label><input type="text" value="' + clean(data.pd.headerSubtitle) + '" oninput="update(\'pd\',\'headerSubtitle\',this.value)"></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">👤 Program Director Info</div>' +  
+                '<div class="field-group"><label>Program Director Name</label><input type="text" placeholder="Dr. [Name]" value="' + clean(data.pd.name) + '" oninput="update(\'pd\',\'name\',this.value)"></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">📝 Topic of the Month</div>' +  
+                '<div class="field-group"><label>Topic Title</label><input type="text" placeholder="e.g., The Art of the Neurological Exam..." value="' + clean(data.pd.topicTitle) + '" oninput="update(\'pd\',\'topicTitle\',this.value)"></div>' +  
+                '<div class="field-group"><label>Paragraph 1</label><textarea rows="5" placeholder="Write the opening message..." oninput="update(\'pd\',\'paragraph1\',this.value)">' + clean(data.pd.paragraph1) + '</textarea></div>' +  
+                '<div class="field-group"><label>Paragraph 2</label><textarea rows="5" placeholder="Continue the message..." oninput="update(\'pd\',\'paragraph2\',this.value)">' + clean(data.pd.paragraph2) + '</textarea></div>' +  
+                '<div class="field-group"><label>Key Takeaway</label><input type="text" placeholder="Residents should..." value="' + clean(data.pd.keyTakeaway) + '" oninput="update(\'pd\',\'keyTakeaway\',this.value)"></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">📋 Announcements</div>' +  
+                '<div id="announcementsContainer">' + annHtml + '</div>' +  
+                '<button class="add-btn" onclick="addAnnouncement()">+ Add Announcement</button>';
 
-            case 'chief':  
-                html = `  
-                    <div class="field-section-title">✏️ Section Header Titles</div>
-                    <div class="field-group">  
-                        <label>Section Header Title</label>  
-                        <input type="text" value="${clean(data.chief.headerTitle)}" oninput="update('chief','headerTitle',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Section Subtitle</label>  
-                        <input type="text" value="${clean(data.chief.headerSubtitle)}" oninput="update('chief','headerSubtitle',this.value)">  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">👤 Chief Resident Info</div>  
-                    <div class="field-row">  
-                        <div class="field-group">  
-                            <label>Chief Resident Name</label>  
-                            <input type="text" placeholder="Dr. [Name]" value="${clean(data.chief.name)}" oninput="update('chief','name',this.value)">  
-                        </div>  
-                        <div class="field-group">  
-                            <label>PGY Level</label>  
-                            <select onchange="update('chief','pgyLevel',this.value)">  
-                                ${['2','3','4','5'].map(l => `<option ${data.chief.pgyLevel===l?'selected':''}>${l}</option>`).join('')}  
-                            </select>  
-                        </div>  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">📝 Topic of the Month</div>  
-                    <div class="field-group">  
-                        <label>Topic Title</label>  
-                        <input type="text" placeholder="e.g., Approach to Acute Vertigo..." value="${clean(data.chief.topicTitle)}" oninput="update('chief','topicTitle',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 1</label>  
-                        <textarea rows="5" placeholder="Case-based teaching point or clinical framework..." oninput="update('chief','paragraph1',this.value)">${clean(data.chief.paragraph1)}</textarea>  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 2</label>  
-                        <textarea rows="5" placeholder="Continue the discussion..." oninput="update('chief','paragraph2',this.value)">${clean(data.chief.paragraph2)}</textarea>  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 3 (optional)</label>  
-                        <textarea rows="3" placeholder="Concluding thought..." oninput="update('chief','paragraph3',this.value)">${clean(data.chief.paragraph3)}</textarea>  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">🧩 Resident Challenge</div>  
-                    <div class="field-group">  
-                        <label>Challenge Question / Case</label>  
-                        <textarea rows="4" placeholder="Present a question, mini-case, or diagnostic puzzle..." oninput="update('chief','challenge',this.value)">${clean(data.chief.challenge)}</textarea>  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Last Month's Answer</label>  
-                        <textarea rows="3" oninput="update('chief','lastAnswer',this.value)">${clean(data.chief.lastAnswer)}</textarea>  
-                    </div>  
-                `;  
-                break;
+        } else if (section === 'chief') {  
+            html =  
+                '<div class="field-section-title">✏️ Section Header Titles</div>' +  
+                '<div class="field-group"><label>Section Header Title</label><input type="text" value="' + clean(data.chief.headerTitle) + '" oninput="update(\'chief\',\'headerTitle\',this.value)"></div>' +  
+                '<div class="field-group"><label>Section Subtitle</label><input type="text" value="' + clean(data.chief.headerSubtitle) + '" oninput="update(\'chief\',\'headerSubtitle\',this.value)"></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">👤 Chief Resident Info</div>' +  
+                '<div class="field-row">' +  
+                    '<div class="field-group"><label>Chief Resident Name</label><input type="text" placeholder="Dr. [Name]" value="' + clean(data.chief.name) + '" oninput="update(\'chief\',\'name\',this.value)"></div>' +  
+                    '<div class="field-group"><label>PGY Level</label><select onchange="update(\'chief\',\'pgyLevel\',this.value)">' +  
+                        ['2','3','4','5'].map(function(l) { return '<option' + (data.chief.pgyLevel===l?' selected':'') + '>' + l + '</option>'; }).join('') +  
+                    '</select></div>' +  
+                '</div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">📝 Topic of the Month</div>' +  
+                '<div class="field-group"><label>Topic Title</label><input type="text" placeholder="e.g., Approach to Acute Vertigo..." value="' + clean(data.chief.topicTitle) + '" oninput="update(\'chief\',\'topicTitle\',this.value)"></div>' +  
+                '<div class="field-group"><label>Paragraph 1</label><textarea rows="5" placeholder="Case-based teaching point..." oninput="update(\'chief\',\'paragraph1\',this.value)">' + clean(data.chief.paragraph1) + '</textarea></div>' +  
+                '<div class="field-group"><label>Paragraph 2</label><textarea rows="5" placeholder="Continue the discussion..." oninput="update(\'chief\',\'paragraph2\',this.value)">' + clean(data.chief.paragraph2) + '</textarea></div>' +  
+                '<div class="field-group"><label>Paragraph 3 (optional)</label><textarea rows="3" placeholder="Concluding thought..." oninput="update(\'chief\',\'paragraph3\',this.value)">' + clean(data.chief.paragraph3) + '</textarea></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">🧩 Resident Challenge</div>' +  
+                '<div class="field-group"><label>Challenge Question / Case</label><textarea rows="4" placeholder="Present a question or diagnostic puzzle..." oninput="update(\'chief\',\'challenge\',this.value)">' + clean(data.chief.challenge) + '</textarea></div>' +  
+                '<div class="field-group"><label>Last Month\'s Answer</label><textarea rows="3" oninput="update(\'chief\',\'lastAnswer\',this.value)">' + clean(data.chief.lastAnswer) + '</textarea></div>';
 
-            case 'theme':  
-                html = `  
-                    <div class="field-section-title">✏️ Section Header Titles</div>
-                    <div class="field-group">  
-                        <label>Section Header Title</label>  
-                        <input type="text" value="${clean(data.theme.headerTitle)}" oninput="update('theme','headerTitle',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Section Subtitle</label>  
-                        <input type="text" value="${clean(data.theme.headerSubtitle)}" oninput="update('theme','headerSubtitle',this.value)">  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">🔬 Theme & Topic Details</div>  
-                    <div class="field-row">
-                        <div class="field-group">  
-                            <label>Neurology Specialty of Focus</label>  
-                            <input type="text" placeholder="e.g., Stroke & Cerebrovascular Neurology" value="${clean(data.theme.specialty)}" oninput="update('theme','specialty',this.value)">  
-                        </div>  
-                        <div class="field-group">  
-                            <label>Monthly Topic Title</label>  
-                            <input type="text" placeholder="e.g., Management of Acute Ischemic Stroke" value="${clean(data.theme.topicTitle)}" oninput="update('theme','topicTitle',this.value)">  
-                        </div>  
-                    </div>
-                    <div class="field-row">
-                        <div class="field-group">  
-                            <label>Featuring Attending Physician</label>  
-                            <input type="text" placeholder="Dr. Jane Doe, MD" value="${clean(data.theme.attendingAuthor)}" oninput="update('theme','attendingAuthor',this.value)">  
-                        </div>  
-                        <div class="field-group">  
-                            <label>Attending Role / Division</label>  
-                            <input type="text" placeholder="e.g., Attending Physician, Cerebrovascular Division" value="${clean(data.theme.attendingRole)}" oninput="update('theme','attendingRole',this.value)">  
-                        </div>  
-                    </div>
-                    <div class="field-group">  
-                        <label>Paragraph 1</label>  
-                        <textarea rows="5" placeholder="Overview and discussion of the monthly topic..." oninput="update('theme','paragraph1',this.value)">${clean(data.theme.paragraph1)}</textarea>  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 2</label>  
-                        <textarea rows="5" placeholder="Continued clinical insights..." oninput="update('theme','paragraph2',this.value)">${clean(data.theme.paragraph2)}</textarea>  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">📚 Recommended Resources</div>  
-                    <div class="field-group"><label>Resource 1</label><input type="text" placeholder="Link or description" value="${clean(data.theme.resource1)}" oninput="update('theme','resource1',this.value)"></div>  
-                    <div class="field-group"><label>Resource 2</label><input type="text" placeholder="Link or description" value="${clean(data.theme.resource2)}" oninput="update('theme','resource2',this.value)"></div>  
-                    <div class="field-group"><label>Resource 3</label><input type="text" placeholder="Link or description" value="${clean(data.theme.resource3)}" oninput="update('theme','resource3',this.value)"></div>  
-                `;  
-                break;
+        } else if (section === 'theme') {  
+            ensureReadingData();
 
-            case 'residentChoice':
-                html = `
-                    <div class="field-section-title">✏️ Section Header Titles</div>
-                    <div class="field-group">  
-                        <label>Section Header Title</label>  
-                        <input type="text" value="${clean(data.residentChoice.headerTitle)}" oninput="update('residentChoice','headerTitle',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Section Subtitle</label>  
-                        <input type="text" value="${clean(data.residentChoice.headerSubtitle)}" oninput="update('residentChoice','headerSubtitle',this.value)">  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">✍️ Resident Details & Topic Choice</div>
-                    <div class="field-row">
-                        <div class="field-group">  
-                            <label>Resident Author Name</label>  
-                            <input type="text" placeholder="Dr. Alex Smith" value="${clean(data.residentChoice.residentName)}" oninput="update('residentChoice','residentName',this.value)">  
-                        </div>  
-                        <div class="field-group">  
-                            <label>PGY Level</label>  
-                            <select onchange="update('residentChoice','residentPGY',this.value)">  
-                                ${['1','2','3','4','5'].map(l => `<option ${data.residentChoice.residentPGY===l?'selected':''}>${l}</option>`).join('')}  
-                            </select>  
-                        </div>  
-                    </div>
-                    <div class="field-group">  
-                        <label>Topic Title (Chosen Topic)</label>  
-                        <input type="text" placeholder="e.g., Lessons Learned on my Neuro-ICU Rotation..." value="${clean(data.residentChoice.topicTitle)}" oninput="update('residentChoice','topicTitle',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 1</label>  
-                        <textarea rows="5" placeholder="Resident write-up, case reflection, or commentary..." oninput="update('residentChoice','paragraph1',this.value)">${clean(data.residentChoice.paragraph1)}</textarea>  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 2</label>  
-                        <textarea rows="5" placeholder="Continued discussion or key insights..." oninput="update('residentChoice','paragraph2',this.value)">${clean(data.residentChoice.paragraph2)}</textarea>  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Key Takeaway / Resident Advice</label>  
-                        <input type="text" placeholder="Key practical tip for co-residents..." value="${clean(data.residentChoice.keyTakeaway)}" oninput="update('residentChoice','keyTakeaway',this.value)">  
-                    </div>  
-                `;
-                break;
+            var readingEntriesHtml = '';  
+            for (var ri = 0; ri < data.theme.recommendedReading.length; ri++) {  
+                readingEntriesHtml += buildReadingEntryHTML(data.theme.recommendedReading[ri], ri);  
+            }
 
-            case 'tech':  
-                html = `  
-                    <div class="field-section-title">✏️ Section Header Titles</div>
-                    <div class="field-group">  
-                        <label>Section Header Title</label>  
-                        <input type="text" value="${clean(data.tech.headerTitle)}" oninput="update('tech','headerTitle',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Section Subtitle</label>  
-                        <input type="text" value="${clean(data.tech.headerSubtitle)}" oninput="update('tech','headerSubtitle',this.value)">  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">🤖 Feature Article</div>  
-                    <div class="field-group">  
-                        <label>Feature Title</label>  
-                        <input type="text" placeholder="e.g., AI-Powered LVO Detection..." value="${clean(data.tech.featureTitle)}" oninput="update('tech','featureTitle',this.value)">  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 1</label>  
-                        <textarea rows="5" oninput="update('tech','paragraph1',this.value)">${clean(data.tech.paragraph1)}</textarea>  
-                    </div>  
-                    <div class="field-group">  
-                        <label>Paragraph 2</label>  
-                        <textarea rows="5" oninput="update('tech','paragraph2',this.value)">${clean(data.tech.paragraph2)}</textarea>  
-                    </div>  
-                    <hr class="field-divider">  
-                    <div class="field-section-title">📚 Recommended Resources</div>  
-                    <div class="field-group"><label>Resource 1</label><input type="text" placeholder="Link or description" value="${clean(data.tech.resource1)}" oninput="update('tech','resource1',this.value)"></div>  
-                    <div class="field-group"><label>Resource 2</label><input type="text" placeholder="Link or description" value="${clean(data.tech.resource2)}" oninput="update('tech','resource2',this.value)"></div>  
-                `;  
-                break;
+            var addBtnDisabled = data.theme.recommendedReading.length >= MAX_READINGS ? ' disabled' : '';  
+            var addBtnText = data.theme.recommendedReading.length >= MAX_READINGS ? '✓ Maximum Articles Reached' : '+ Add Recommended Article';
 
-            case 'events':  
-                html = `  
-                    <div class="field-section-title">📅 Upcoming Events</div>  
-                    <div id="eventsContainer">  
-                        ${data.events.map((e, i) => `  
-                            <div class="repeater-item">  
-                                <button class="remove-btn" onclick="removeEvent(${i})">×</button>  
-                                <div class="field-row" style="margin-bottom:8px;">  
-                                    <div class="field-group" style="margin:0;"><label>Day</label><input type="text" placeholder="05" value="${clean(e.day)}" oninput="updateEvent(${i},'day',this.value)"></div>  
-                                    <div class="field-group" style="margin:0;"><label>Month</label><input type="text" placeholder="Jul" value="${clean(e.month)}" oninput="updateEvent(${i},'month',this.value)"></div>  
-                                </div>  
-                                <div class="field-group" style="margin-bottom:8px;"><label>Event Title</label><input type="text" placeholder="Grand Rounds:..." value="${clean(e.title)}" oninput="updateEvent(${i},'title',this.value)"></div>  
-                                <div class="field-group" style="margin:0;"><label>Details</label><input type="text" placeholder="12:00 PM | Location" value="${clean(e.desc)}" oninput="updateEvent(${i},'desc',this.value)"></div>  
-                            </div>  
-                        `).join('')}  
-                    </div>  
-                    <button class="add-btn" onclick="addEvent()">+ Add Event</button>  
-                `;  
-                break;
+            html =  
+                '<div class="field-section-title">✏️ Section Header Titles</div>' +  
+                '<div class="field-group"><label>Section Header Title</label><input type="text" value="' + clean(data.theme.headerTitle) + '" oninput="update(\'theme\',\'headerTitle\',this.value)"></div>' +  
+                '<div class="field-group"><label>Section Subtitle</label><input type="text" value="' + clean(data.theme.headerSubtitle) + '" oninput="update(\'theme\',\'headerSubtitle\',this.value)"></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">🔬 Theme & Topic Details</div>' +  
+                '<div class="field-row">' +  
+                    '<div class="field-group"><label>Neurology Specialty of Focus</label><input type="text" placeholder="e.g., Stroke & Cerebrovascular Neurology" value="' + clean(data.theme.specialty) + '" oninput="update(\'theme\',\'specialty\',this.value)"></div>' +  
+                    '<div class="field-group"><label>Monthly Topic Title</label><input type="text" placeholder="e.g., Management of Acute Ischemic Stroke" value="' + clean(data.theme.topicTitle) + '" oninput="update(\'theme\',\'topicTitle\',this.value)"></div>' +  
+                '</div>' +  
+                '<div class="field-row">' +  
+                    '<div class="field-group"><label>Featuring Attending Physician</label><input type="text" placeholder="Dr. Jane Doe, MD" value="' + clean(data.theme.attendingAuthor) + '" oninput="update(\'theme\',\'attendingAuthor\',this.value)"></div>' +  
+                    '<div class="field-group"><label>Attending Role / Division</label><input type="text" placeholder="e.g., Attending Physician, Cerebrovascular Division" value="' + clean(data.theme.attendingRole) + '" oninput="update(\'theme\',\'attendingRole\',this.value)"></div>' +  
+                '</div>' +  
+                '<div class="field-group"><label>Paragraph 1</label><textarea rows="5" placeholder="Overview and discussion of the monthly topic..." oninput="update(\'theme\',\'paragraph1\',this.value)">' + clean(data.theme.paragraph1) + '</textarea></div>' +  
+                '<div class="field-group"><label>Paragraph 2</label><textarea rows="5" placeholder="Continued clinical insights..." oninput="update(\'theme\',\'paragraph2\',this.value)">' + clean(data.theme.paragraph2) + '</textarea></div>' +  
+                '<div class="field-group"><label>Paragraph 3</label><textarea rows="5" placeholder="Summary, clinical pearls, and key points..." oninput="update(\'theme\',\'paragraph3\',this.value)">' + clean(data.theme.paragraph3) + '</textarea></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">📚 Recommended Reading <span class="reading-badge">' + data.theme.recommendedReading.length + ' / ' + MAX_READINGS + '</span></div>' +  
+                '<p style="font-size:12px; color:var(--text-muted); margin: -8px 0 16px; line-height:1.5;">Curate <strong style="color:var(--editor-accent);">1 to 3</strong> articles that complement this month\'s educational topic.</p>' +  
+                '<div id="readingContainer">' + readingEntriesHtml + '</div>' +  
+                '<button class="add-btn" id="addReadingBtn" onclick="addReading()"' + addBtnDisabled + '>' + addBtnText + '</button>';
+
+        } else if (section === 'residentChoice') {  
+            html =  
+                '<div class="field-section-title">✏️ Section Header Titles</div>' +  
+                '<div class="field-group"><label>Section Header Title</label><input type="text" value="' + clean(data.residentChoice.headerTitle) + '" oninput="update(\'residentChoice\',\'headerTitle\',this.value)"></div>' +  
+                '<div class="field-group"><label>Section Subtitle</label><input type="text" value="' + clean(data.residentChoice.headerSubtitle) + '" oninput="update(\'residentChoice\',\'headerSubtitle\',this.value)"></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">✍️ Resident Details & Topic Choice</div>' +  
+                '<div class="field-row">' +  
+                    '<div class="field-group"><label>Resident Author Name</label><input type="text" placeholder="Dr. Alex Smith" value="' + clean(data.residentChoice.residentName) + '" oninput="update(\'residentChoice\',\'residentName\',this.value)"></div>' +  
+                    '<div class="field-group"><label>PGY Level</label><select onchange="update(\'residentChoice\',\'residentPGY\',this.value)">' +  
+                        ['1','2','3','4','5'].map(function(l) { return '<option' + (data.residentChoice.residentPGY===l?' selected':'') + '>' + l + '</option>'; }).join('') +  
+                    '</select></div>' +  
+                '</div>' +  
+                '<div class="field-group"><label>Topic Title (Chosen Topic)</label><input type="text" placeholder="e.g., Lessons Learned on my Neuro-ICU Rotation..." value="' + clean(data.residentChoice.topicTitle) + '" oninput="update(\'residentChoice\',\'topicTitle\',this.value)"></div>' +  
+                '<div class="field-group"><label>Paragraph 1</label><textarea rows="5" placeholder="Resident write-up, case reflection, or commentary..." oninput="update(\'residentChoice\',\'paragraph1\',this.value)">' + clean(data.residentChoice.paragraph1) + '</textarea></div>' +  
+                '<div class="field-group"><label>Paragraph 2</label><textarea rows="5" placeholder="Continued discussion or key insights..." oninput="update(\'residentChoice\',\'paragraph2\',this.value)">' + clean(data.residentChoice.paragraph2) + '</textarea></div>' +  
+                '<div class="field-group"><label>Key Takeaway / Resident Advice</label><input type="text" placeholder="Key practical tip for co-residents..." value="' + clean(data.residentChoice.keyTakeaway) + '" oninput="update(\'residentChoice\',\'keyTakeaway\',this.value)"></div>';
+
+        } else if (section === 'tech') {  
+            html =  
+                '<div class="field-section-title">✏️ Section Header Titles</div>' +  
+                '<div class="field-group"><label>Section Header Title</label><input type="text" value="' + clean(data.tech.headerTitle) + '" oninput="update(\'tech\',\'headerTitle\',this.value)"></div>' +  
+                '<div class="field-group"><label>Section Subtitle</label><input type="text" value="' + clean(data.tech.headerSubtitle) + '" oninput="update(\'tech\',\'headerSubtitle\',this.value)"></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">🤖 Feature Article</div>' +  
+                '<div class="field-group"><label>Feature Title</label><input type="text" placeholder="e.g., AI-Powered LVO Detection..." value="' + clean(data.tech.featureTitle) + '" oninput="update(\'tech\',\'featureTitle\',this.value)"></div>' +  
+                '<div class="field-group"><label>Paragraph 1</label><textarea rows="5" oninput="update(\'tech\',\'paragraph1\',this.value)">' + clean(data.tech.paragraph1) + '</textarea></div>' +  
+                '<div class="field-group"><label>Paragraph 2</label><textarea rows="5" oninput="update(\'tech\',\'paragraph2\',this.value)">' + clean(data.tech.paragraph2) + '</textarea></div>' +  
+                '<hr class="field-divider">' +  
+                '<div class="field-section-title">📚 Recommended Resources</div>' +  
+                '<div class="field-group"><label>Resource 1</label><input type="text" placeholder="Link or description" value="' + clean(data.tech.resource1) + '" oninput="update(\'tech\',\'resource1\',this.value)"></div>' +  
+                '<div class="field-group"><label>Resource 2</label><input type="text" placeholder="Link or description" value="' + clean(data.tech.resource2) + '" oninput="update(\'tech\',\'resource2\',this.value)"></div>';
+
+        } else if (section === 'events') {  
+            var evHtml = '';  
+            for (var ei = 0; ei < data.events.length; ei++) {  
+                var ev = data.events[ei];  
+                evHtml += '<div class="repeater-item"><button class="remove-btn" onclick="removeEvent(' + ei + ')">×</button>' +  
+                    '<div class="field-row" style="margin-bottom:8px;">' +  
+                        '<div class="field-group" style="margin:0;"><label>Day</label><input type="text" placeholder="05" value="' + clean(ev.day) + '" oninput="updateEvent(' + ei + ',\'day\',this.value)"></div>' +  
+                        '<div class="field-group" style="margin:0;"><label>Month</label><input type="text" placeholder="Jul" value="' + clean(ev.month) + '" oninput="updateEvent(' + ei + ',\'month\',this.value)"></div>' +  
+                    '</div>' +  
+                    '<div class="field-group" style="margin-bottom:8px;"><label>Event Title</label><input type="text" placeholder="Grand Rounds:..." value="' + clean(ev.title) + '" oninput="updateEvent(' + ei + ',\'title\',this.value)"></div>' +  
+                    '<div class="field-group" style="margin:0;"><label>Details</label><input type="text" placeholder="12:00 PM | Location" value="' + clean(ev.desc) + '" oninput="updateEvent(' + ei + ',\'desc\',this.value)"></div>' +  
+                '</div>';  
+            }  
+            html =  
+                '<div class="field-section-title">📅 Upcoming Events</div>' +  
+                '<div id="eventsContainer">' + evHtml + '</div>' +  
+                '<button class="add-btn" onclick="addEvent()">+ Add Event</button>';  
         }
 
         scroll.innerHTML = html;  
     }
 
-    // ═══════════════════════════════════════════════════════  
-    // DATA UPDATE FUNCTIONS & LIVE PREVIEW REFRESH  
-    // ═══════════════════════════════════════════════════════  
     function update(section, field, value) {  
         data[section][field] = value;  
         renderPreview();  
@@ -1355,7 +1107,6 @@
         data.pd.announcements.push('');  
         renderEditor('pd');  
         renderPreview();  
-        updateStatusIndicators();  
         autoSave();  
     }
 
@@ -1363,7 +1114,6 @@
         data.pd.announcements.splice(index, 1);  
         renderEditor('pd');  
         renderPreview();  
-        updateStatusIndicators();  
         autoSave();  
     }
 
@@ -1378,7 +1128,6 @@
         data.events.push({ day: '', month: '', title: '', desc: '' });  
         renderEditor('events');  
         renderPreview();  
-        updateStatusIndicators();  
         autoSave();  
     }
 
@@ -1386,292 +1135,210 @@
         data.events.splice(index, 1);  
         renderEditor('events');  
         renderPreview();  
-        updateStatusIndicators();  
         autoSave();  
     }
 
-    function clean(str) {  
-        if (!str) return '';  
-        return String(str).replace(/"/g, '&quot;');  
+    function updateReading(index, field, value) {  
+        ensureReadingData();  
+        data.theme.recommendedReading[index][field] = value;  
+        renderPreview();  
+        autoSave();  
     }
 
-    function d(val, placeholder) {  
-        return val && String(val).trim() ? val : `<span style="opacity:0.4;font-style:italic;">${placeholder}</span>`;  
+    function addReading() {  
+        ensureReadingData();  
+        if (data.theme.recommendedReading.length >= MAX_READINGS) return;  
+        data.theme.recommendedReading.push({ title: '', authors: '', source: '', url: '', annotation: '' });  
+        renderEditor('theme');  
+        renderPreview();  
+        autoSave();  
+        setTimeout(function() {  
+            var s = document.getElementById('editorScroll');  
+            s.scrollTop = s.scrollHeight;  
+        }, 50);  
     }
 
-    // ═══════════════════════════════════════════════════════  
-    // PREVIEW RENDERING  
-    // ═══════════════════════════════════════════════════════  
+    function removeReading(index) {  
+        ensureReadingData();  
+        if (data.theme.recommendedReading.length <= MIN_READINGS) return;  
+        data.theme.recommendedReading.splice(index, 1);  
+        renderEditor('theme');  
+        renderPreview();  
+        autoSave();  
+    }
+
     function renderPreview() {  
-        const frame = document.getElementById('previewFrame');  
+        var frame = document.getElementById('previewFrame');  
+        ensureReadingData();
 
-        frame.innerHTML = `  
-            <!-- MASTHEAD -->  
-            <div class="n-masthead">  
-                <div class="n-masthead-content">  
-                    <span class="n-masthead-emoji">🧠</span>  
-                    <h1 class="n-masthead-title">${d(data.masthead.title, 'NEURON')}</h1>  
-                    <p class="n-masthead-subtitle">${d(data.masthead.subtitle, 'Northwell Education & Updates in Residency-Oriented Neurology')}</p>  
-                    <div class="n-masthead-meta">  
-                        <span>📅 Volume ${d(data.masthead.volume,'1')} • Issue ${d(data.masthead.issue,'1')} • ${d(data.masthead.month,'Month')} ${d(data.masthead.year,'2025')}</span>  
-                        <span>✏️ Editor: ${d(data.masthead.editor,'Dr. [Chief Resident]')}</span>  
-                        <span>📧 ${d(data.masthead.email,'neuron@northwell.edu')}</span>  
-                    </div>  
-                </div>  
-            </div>
+        var readings = data.theme.recommendedReading;  
+        var filledReadings = [];  
+        for (var i = 0; i < readings.length; i++) {  
+            if (readings[i].title && readings[i].title.trim()) {  
+                filledReadings.push(readings[i]);  
+            }  
+        }
 
-            <div class="n-body">
+        var readingPreviewHTML = '';  
+        if (filledReadings.length > 0) {  
+            var items = '';  
+            for (var j = 0; j < filledReadings.length; j++) {  
+                var r = filledReadings[j];  
+                var titleDisplay = (r.url && r.url.trim()) ? '<a href="' + r.url + '" target="_blank">' + r.title + '</a>' : r.title;  
+                var metaLine = '';  
+                if (r.authors || r.source) {  
+                    metaLine = '<div class="n-reading-meta">' + r.authors + (r.authors && r.source ? '. ' : '') + r.source + '</div>';  
+                }  
+                var annotLine = r.annotation ? '<div class="n-reading-annotation">' + r.annotation + '</div>' : '';  
+                items += '<div class="n-reading-item"><div class="n-reading-title">' + titleDisplay + '</div>' + metaLine + annotLine + '</div>';  
+            }  
+            readingPreviewHTML = '<div class="n-divider">📚 Recommended Reading</div><div class="n-reading-list">' + items + '</div>';  
+        } else {  
+            readingPreviewHTML = '<div class="n-divider">📚 Recommended Reading</div><div class="n-reading-list"><div class="n-reading-item"><div class="n-reading-title" style="opacity:0.4;font-style:italic;">[Add recommended articles in the editor — 1 to 3 per issue]</div></div></div>';  
+        }
 
-                <!-- PD SECTION -->  
-                <div class="n-card">  
-                    <div class="n-card-header">  
-                        <div class="n-card-icon n-icon-blue">📌</div>  
-                        <div>  
-                            <div class="n-card-title">${d(data.pd.headerTitle, "From the Program Director's Desk")}</div>  
-                            <div class="n-card-subtitle">${d(data.pd.headerSubtitle, "Monthly message & program announcements")}</div>  
-                        </div>  
-                    </div>  
-                    <div class="n-card-body">  
-                        <div class="n-byline">  
-                            <div class="n-avatar">PD</div>  
-                            <div>  
-                                <div class="n-byline-name">${d(data.pd.name,'Dr. [Program Director Name]')}</div>  
-                                <div class="n-byline-role">Program Director, Neurology Residency</div>  
-                            </div>  
-                        </div>  
-                        <h3 class="n-topic-title">Topic of the Month: <em>${d(data.pd.topicTitle,'[Title]')}</em></h3>  
-                        <p>${d(data.pd.paragraph1,'[Opening paragraph — the PD sets the educational tone for the month...]')}</p>  
-                        <p>${d(data.pd.paragraph2,'[Second paragraph — practical guidance connected to daily resident life...]')}</p>  
-                        <div class="n-callout n-callout-blue">  
-                            <strong>💡 Key Takeaway</strong>  
-                            ${d(data.pd.keyTakeaway,'[One-sentence actionable takeaway]')}  
-                        </div>  
-                        <h4 style="font-size:14px;margin:18px 0 10px;color:#1a202c;">📋 Program Updates & Announcements</h4>  
-                        <ul class="n-announcement-list">  
-                            ${(data.pd.announcements.filter(a=>a.trim()).length ? data.pd.announcements.filter(a=>a.trim()) : ['[Announcement 1]','[Announcement 2]','[Announcement 3]']).map(a => `<li>${a}</li>`).join('')}  
-                        </ul>  
-                    </div>  
-                </div>
+        var annFiltered = data.pd.announcements.filter(function(a) { return a.trim(); });  
+        var annList = annFiltered.length ? annFiltered : ['[Announcement 1]','[Announcement 2]','[Announcement 3]'];  
+        var annItems = annList.map(function(a) { return '<li>' + a + '</li>'; }).join('');
 
-                <!-- CHIEF SECTION -->  
-                <div class="n-card">  
-                    <div class="n-card-header">  
-                        <div class="n-card-icon n-icon-gold">🎓</div>  
-                        <div>  
-                            <div class="n-card-title">${d(data.chief.headerTitle, "Chief Resident's Corner")}</div>  
-                            <div class="n-card-subtitle">${d(data.chief.headerSubtitle, "Clinical teaching & resident challenge")}</div>  
-                        </div>  
-                    </div>  
-                    <div class="n-card-body">  
-                        <div class="n-byline">  
-                            <div class="n-avatar" style="background:linear-gradient(135deg,#d69e2e,#ecc94b);">CR</div>  
-                            <div>  
-                                <div class="n-byline-name">${d(data.chief.name,'Dr. [Chief Resident]')}</div>  
-                                <div class="n-byline-role">Chief Resident, PGY-${data.chief.pgyLevel}</div>  
-                            </div>  
-                        </div>  
-                        <h3 class="n-topic-title">Topic of the Month: <em>${d(data.chief.topicTitle,'[Title]')}</em></h3>  
-                        <p>${d(data.chief.paragraph1,'[A focused clinical or educational write-up...]')}</p>  
-                        ${data.chief.paragraph2 ? `<p>${data.chief.paragraph2}</p>` : ''}  
-                        ${data.chief.paragraph3 ? `<p>${data.chief.paragraph3}</p>` : ''}  
-                        <div class="n-callout n-callout-gold">  
-                            <strong>🧩 Resident Challenge of the Month</strong>  
-                            ${d(data.chief.challenge,'[Present a question or diagnostic puzzle...]')}  
-                        </div>  
-                        <div class="n-callout n-callout-green">  
-                            <strong>✅ Last Month's Answer</strong>  
-                            ${d(data.chief.lastAnswer,'[Explanation of last month\'s challenge]')}  
-                        </div>  
-                    </div>  
-                </div>
+        var chiefP2 = data.chief.paragraph2 ? '<p>' + data.chief.paragraph2 + '</p>' : '';  
+        var chiefP3 = data.chief.paragraph3 ? '<p>' + data.chief.paragraph3 + '</p>' : '';
 
-                <!-- THEME SECTION -->  
-                <div class="n-card">  
-                    <div class="n-card-header">  
-                        <div class="n-card-icon n-icon-teal">🔬</div>  
-                        <div>  
-                            <div class="n-card-title">${d(data.theme.headerTitle, "Educational Theme of the Month")}</div>  
-                            <div class="n-card-subtitle">${d(data.theme.headerSubtitle, "Monthly clinical focus & educational highlights")}</div>  
-                        </div>  
-                    </div>  
-                    <div class="n-card-body">  
-                        <div class="n-divider">Specialty Focus</div>  
-                        <h3 class="n-topic-title" style="font-size: 20px; font-weight: 800; color: #1a365d;">${d(data.theme.specialty, '[Neurology Specialty Focus]')}</h3>
+        var rcP2 = data.residentChoice.paragraph2 ? '<p>' + data.residentChoice.paragraph2 + '</p>' : '';  
+        var rcTakeaway = data.residentChoice.keyTakeaway ? '<div class="n-callout n-callout-green"><strong>📌 Resident Takeaway</strong>' + data.residentChoice.keyTakeaway + '</div>' : '';
 
-                        <h4 style="font-size:15px;color:#319795;margin: 14px 0 10px;">Monthly Topic: ${d(data.theme.topicTitle, '[Monthly Topic Title]')}</h4>  
+        var techP2 = data.tech.paragraph2 ? '<p>' + data.tech.paragraph2 + '</p>' : '';  
+        var techRes = '';  
+        if (data.tech.resource1 || data.tech.resource2) {  
+            techRes = '<h4 style="font-size:13px;margin:16px 0 6px;color:#1a202c;">📚 Recommended Reading / Listening</h4><ul class="n-announcement-list">';  
+            if (data.tech.resource1) techRes += '<li>' + data.tech.resource1 + '</li>';  
+            if (data.tech.resource2) techRes += '<li>' + data.tech.resource2 + '</li>';  
+            techRes += '</ul>';  
+        }
 
-                        <div class="n-byline">  
-                            <div class="n-avatar" style="background:linear-gradient(135deg,#805ad5,#9f7aea);">AP</div>  
-                            <div>  
-                                <div class="n-byline-name">${d(data.theme.attendingAuthor,'Dr. [Attending Physician Name]')}</div>  
-                                <div class="n-byline-role">${d(data.theme.attendingRole,'Attending Physician')}</div>  
-                            </div>  
-                        </div>  
+        var evFiltered = data.events.filter(function(e) { return e.title.trim(); });  
+        var evHTML = '';  
+        if (evFiltered.length) {  
+            for (var k = 0; k < evFiltered.length; k++) {  
+                var ev = evFiltered[k];  
+                evHTML += '<div class="n-event-item"><div class="n-event-date"><div class="n-event-day">' + (ev.day || '--') + '</div><div class="n-event-month-label">' + (ev.month || '---') + '</div></div><div><div class="n-event-title">' + ev.title + '</div><div class="n-event-desc">' + ev.desc + '</div></div></div>';  
+            }  
+        } else {  
+            evHTML = '<div class="n-event-item"><div class="n-event-date"><div class="n-event-day">--</div><div class="n-event-month-label">---</div></div><div><div class="n-event-title" style="opacity:0.4;font-style:italic;">[Add events in the editor]</div></div></div>';  
+        }
 
-                        <p>${d(data.theme.paragraph1,'[Overview and discussion of the monthly topic...]')}</p>  
-                        ${data.theme.paragraph2 ? `<p>${data.theme.paragraph2}</p>` : ''}
-                        
-                          ${(data.theme.resource1 || data.theme.resource2) ? `  
-                        <h4 style="font-size:13px;margin:16px 0 6px;color:#1a202c;">📚 Recommended Reading </h4>  
-                        <ul class="n-announcement-list">  
-                            ${data.theme.resource1 ? `<li>${data.theme.resource1}</li>` : ''}  
-                            ${data.theme.resource2 ? `<li>${data.theme.resource2}</li>` : ''}  
-                            ${data.theme.resource3 ? `<li>${data.theme.resource3}</li>` : ''}  
-                        </ul> 
-                    
-                    </div>  
-                </div>
+        frame.innerHTML =  
+            '<div class="n-masthead"><div class="n-masthead-content">' +  
+                '<span class="n-masthead-emoji">🧠</span>' +  
+                '<h1 class="n-masthead-title">' + d(data.masthead.title, 'NEURON') + '</h1>' +  
+                '<p class="n-masthead-subtitle">' + d(data.masthead.subtitle, 'Northwell Education & Updates in Residency-Oriented Neurology') + '</p>' +  
+                '<div class="n-masthead-meta">' +  
+                    '<span>📅 Volume ' + d(data.masthead.volume,'1') + ' • Issue ' + d(data.masthead.issue,'1') + ' • ' + d(data.masthead.month,'Month') + ' ' + d(data.masthead.year,'2025') + '</span>' +  
+                    '<span>✏️ Editor: ' + d(data.masthead.editor,'Dr. [Chief Resident]') + '</span>' +  
+                    '<span>📧 ' + d(data.masthead.email,'neuron@northwell.edu') + '</span>' +  
+                '</div>' +  
+            '</div></div>' +
 
-                <!-- RESIDENT CHOICE TOPIC SPOTLIGHT -->
-                <div class="n-card">  
-                    <div class="n-card-header">  
-                        <div class="n-card-icon n-icon-teal">✍️</div>  
-                        <div>  
-                            <div class="n-card-title">${d(data.residentChoice.headerTitle, "Resident Spotlight & Choice Topic")}</div>  
-                            <div class="n-card-subtitle">${d(data.residentChoice.headerSubtitle, "Resident-authored clinical write-ups & reflections")}</div>  
-                        </div>  
-                    </div>  
-                    <div class="n-card-body">  
-                        <div class="n-byline">  
-                            <div class="n-avatar" style="background:linear-gradient(135deg,#319795,#38b2ac);">RS</div>  
-                            <div>  
-                                <div class="n-byline-name">${d(data.residentChoice.residentName,'Dr. [Resident Name]')}</div>  
-                                <div class="n-byline-role">PGY-${data.residentChoice.residentPGY}, Neurology Resident</div>  
-                            </div>  
-                        </div>  
-                        <h3 class="n-topic-title">Topic Choice: <em>${d(data.residentChoice.topicTitle,'[Topic Title]')}</em></h3>  
-                        <p>${d(data.residentChoice.paragraph1,'[Resident write-up, case review, reflection, or topic choice...]')}</p>  
-                        ${data.residentChoice.paragraph2 ? `<p>${data.residentChoice.paragraph2}</p>` : ''}  
-                        ${data.residentChoice.keyTakeaway ? `
-                        <div class="n-callout n-callout-green">  
-                            <strong>📌 Resident Takeaway</strong>  
-                            ${data.residentChoice.keyTakeaway}  
-                        </div>` : ''}
-                    </div>  
-                </div>
+            '<div class="n-body">' +
 
-                <!-- TECH SECTION -->  
-                <div class="n-card">  
-                    <div class="n-card-header">  
-                        <div class="n-card-icon n-icon-purple">🤖</div>  
-                        <div>  
-                            <div class="n-card-title">${d(data.tech.headerTitle, "Tech & Innovation in Neurology")}</div>  
-                            <div class="n-card-subtitle">${d(data.tech.headerSubtitle, "Artificial intelligence, digital health & emerging tools")}</div>  
-                        </div>  
-                    </div>  
-                    <div class="n-card-body">  
-                        <h3 class="n-topic-title">This Month's Feature: <em>${d(data.tech.featureTitle,'[Title]')}</em></h3>  
-                        <p>${d(data.tech.paragraph1,'[Technology overview...]')}</p>  
-                        ${data.tech.paragraph2 ? `<p>${data.tech.paragraph2}</p>` : ''}
+                '<div class="n-card"><div class="n-card-header"><div class="n-card-icon n-icon-blue">📌</div><div><div class="n-card-title">' + d(data.pd.headerTitle, "From the Program Director's Desk") + '</div><div class="n-card-subtitle">' + d(data.pd.headerSubtitle, 'Monthly message & program announcements') + '</div></div></div>' +  
+                '<div class="n-card-body">' +  
+                    '<div class="n-byline"><div class="n-avatar">PD</div><div><div class="n-byline-name">' + d(data.pd.name,'Dr. [Program Director Name]') + '</div><div class="n-byline-role">Program Director, Neurology Residency</div></div></div>' +  
+                    '<h3 class="n-topic-title">Topic of the Month: <em>' + d(data.pd.topicTitle,'[Title]') + '</em></h3>' +  
+                    '<p>' + d(data.pd.paragraph1,'[Opening paragraph...]') + '</p>' +  
+                    '<p>' + d(data.pd.paragraph2,'[Second paragraph...]') + '</p>' +  
+                    '<div class="n-callout n-callout-blue"><strong>💡 Key Takeaway</strong>' + d(data.pd.keyTakeaway,'[One-sentence actionable takeaway]') + '</div>' +  
+                    '<h4 style="font-size:14px;margin:18px 0 10px;color:#1a202c;">📋 Program Updates & Announcements</h4>' +  
+                    '<ul class="n-announcement-list">' + annItems + '</ul>' +  
+                '</div></div>' +
 
-                        ${(data.tech.resource1 || data.tech.resource2) ? `  
-                        <h4 style="font-size:13px;margin:16px 0 6px;color:#1a202c;">📚 Recommended Reading / Listening</h4>  
-                        <ul class="n-announcement-list">  
-                            ${data.tech.resource1 ? `<li>${data.tech.resource1}</li>` : ''}  
-                            ${data.tech.resource2 ? `<li>${data.tech.resource2}</li>` : ''}  
-                        </ul>  
-                        ` : ''}  
-                    </div>  
-                </div>
+                '<div class="n-card"><div class="n-card-header"><div class="n-card-icon n-icon-gold">🎓</div><div><div class="n-card-title">' + d(data.chief.headerTitle, "Chief Resident's Corner") + '</div><div class="n-card-subtitle">' + d(data.chief.headerSubtitle, 'Clinical teaching & resident challenge') + '</div></div></div>' +  
+                '<div class="n-card-body">' +  
+                    '<div class="n-byline"><div class="n-avatar" style="background:linear-gradient(135deg,#d69e2e,#ecc94b);">CR</div><div><div class="n-byline-name">' + d(data.chief.name,'Dr. [Chief Resident]') + '</div><div class="n-byline-role">Chief Resident, PGY-' + data.chief.pgyLevel + '</div></div></div>' +  
+                    '<h3 class="n-topic-title">Topic of the Month: <em>' + d(data.chief.topicTitle,'[Title]') + '</em></h3>' +  
+                    '<p>' + d(data.chief.paragraph1,'[A focused clinical or educational write-up...]') + '</p>' +  
+                    chiefP2 + chiefP3 +  
+                    '<div class="n-callout n-callout-gold"><strong>🧩 Resident Challenge of the Month</strong>' + d(data.chief.challenge,'[Present a question or diagnostic puzzle...]') + '</div>' +  
+                    '<div class="n-callout n-callout-green"><strong>✅ Last Month\'s Answer</strong>' + d(data.chief.lastAnswer,'[Explanation]') + '</div>' +  
+                '</div></div>' +
 
-                <!-- EVENTS SECTION -->  
-                <div class="n-card">  
-                    <div class="n-card-header">  
-                        <div class="n-card-icon n-icon-blue">📅</div>  
-                        <div>  
-                            <div class="n-card-title">Dates & Deadlines</div>  
-                            <div class="n-card-subtitle">Upcoming events, conferences & milestones</div>  
-                        </div>  
-                    </div>  
-                    <div class="n-card-body">  
-                        ${data.events.filter(e => e.title.trim()).length ? data.events.filter(e => e.title.trim()).map(e => `  
-                            <div class="n-event-item">  
-                                <div class="n-event-date">  
-                                    <div class="n-event-day">${e.day || '--'}</div>  
-                                    <div class="n-event-month-label">${e.month || '---'}</div>  
-                                </div>  
-                                <div>  
-                                    <div class="n-event-title">${e.title}</div>  
-                                    <div class="n-event-desc">${e.desc}</div>  
-                                </div>  
-                            </div>  
-                        `).join('') : `  
-                            <div class="n-event-item">  
-                                <div class="n-event-date"><div class="n-event-day">--</div><div class="n-event-month-label">---</div></div>  
-                                <div><div class="n-event-title" style="opacity:0.4;font-style:italic;">[Add events in the editor]</div></div>  
-                            </div>  
-                        `}  
-                    </div>  
-                </div>
+                '<div class="n-card"><div class="n-card-header"><div class="n-card-icon n-icon-teal">🔬</div><div><div class="n-card-title">' + d(data.theme.headerTitle, 'Educational Theme of the Month') + '</div><div class="n-card-subtitle">' + d(data.theme.headerSubtitle, 'Monthly clinical focus & educational highlights') + '</div></div></div>' +  
+                '<div class="n-card-body">' +  
+                    '<div class="n-divider">Specialty Focus</div>' +  
+                    '<h3 class="n-topic-title" style="font-size:20px;font-weight:800;color:#1a365d;">' + d(data.theme.specialty, '[Neurology Specialty Focus]') + '</h3>' +  
+                    '<h4 style="font-size:15px;color:#319795;margin:14px 0 10px;">Monthly Topic: ' + d(data.theme.topicTitle, '[Monthly Topic Title]') + '</h4>' +  
+                    '<div class="n-byline"><div class="n-avatar" style="background:linear-gradient(135deg,#805ad5,#9f7aea);">AP</div><div><div class="n-byline-name">' + d(data.theme.attendingAuthor,'Dr. [Attending Physician Name]') + '</div><div class="n-byline-role">' + d(data.theme.attendingRole,'Attending Physician') + '</div></div></div>' +  
+                    '<p>' + d(data.theme.paragraph1,'[Overview and discussion of the monthly topic...]') + '</p>' +  
+                    '<p>' + d(data.theme.paragraph2,'[Continued clinical insights and evidence-based discussion...]') + '</p>' +  
+                    '<p>' + d(data.theme.paragraph3,'[Summary, clinical pearls, and key points for residents...]') + '</p>' +  
+                    readingPreviewHTML +  
+                '</div></div>' +
 
-            </div>
+                '<div class="n-card"><div class="n-card-header"><div class="n-card-icon n-icon-teal">✍️</div><div><div class="n-card-title">' + d(data.residentChoice.headerTitle, 'Resident Spotlight & Choice Topic') + '</div><div class="n-card-subtitle">' + d(data.residentChoice.headerSubtitle, 'Resident-authored clinical write-ups & reflections') + '</div></div></div>' +  
+                '<div class="n-card-body">' +  
+                    '<div class="n-byline"><div class="n-avatar" style="background:linear-gradient(135deg,#319795,#38b2ac);">RS</div><div><div class="n-byline-name">' + d(data.residentChoice.residentName,'Dr. [Resident Name]') + '</div><div class="n-byline-role">PGY-' + data.residentChoice.residentPGY + ', Neurology Resident</div></div></div>' +  
+                    '<h3 class="n-topic-title">Topic Choice: <em>' + d(data.residentChoice.topicTitle,'[Topic Title]') + '</em></h3>' +  
+                    '<p>' + d(data.residentChoice.paragraph1,'[Resident write-up...]') + '</p>' +  
+                    rcP2 + rcTakeaway +  
+                '</div></div>' +
 
-            <!-- FOOTER -->  
-            <div class="n-footer">  
-                <div class="n-footer-grid">  
-                    <div>  
-                        <h4>About NEURON</h4>  
-                        <p>Produced monthly by the Northwell Health Neurology Residents with faculty oversight.</p>  
-                    </div>  
-                    <div>  
-                        <h4>Editorial Board</h4>  
-                        <ul>  
-                            <li>Editor: ${d(data.masthead.editor,'[Name]')}</li>  
-                            <li>Faculty: ${d(data.masthead.facultyAdvisor,'[Name]')}</li>  
-                            <li>PD: ${d(data.pd.name,'[Name]')}</li>  
-                        </ul>  
-                    </div>  
-                    <div>  
-                        <h4>Contact</h4>  
-                        <ul>  
-                            <li>📧 ${d(data.masthead.email,'neuron@northwell.edu')}</li>  
-                        </ul>  
-                    </div>  
-                </div>  
-                <div class="n-footer-bottom">  
-                    <span>© ${data.masthead.year} Northwell Health — Neurology Residency</span>  
-                </div>  
-            </div>  
-        `;  
+                '<div class="n-card"><div class="n-card-header"><div class="n-card-icon n-icon-purple">🤖</div><div><div class="n-card-title">' + d(data.tech.headerTitle, 'Tech & Innovation in Neurology') + '</div><div class="n-card-subtitle">' + d(data.tech.headerSubtitle, 'Artificial intelligence, digital health & emerging tools') + '</div></div></div>' +  
+                '<div class="n-card-body">' +  
+                    '<h3 class="n-topic-title">This Month\'s Feature: <em>' + d(data.tech.featureTitle,'[Title]') + '</em></h3>' +  
+                    '<p>' + d(data.tech.paragraph1,'[Technology overview...]') + '</p>' +  
+                    techP2 + techRes +  
+                '</div></div>' +
+
+                '<div class="n-card"><div class="n-card-header"><div class="n-card-icon n-icon-blue">📅</div><div><div class="n-card-title">Dates & Deadlines</div><div class="n-card-subtitle">Upcoming events, conferences & milestones</div></div></div>' +  
+                '<div class="n-card-body">' + evHTML + '</div></div>' +
+
+            '</div>' +
+
+            '<div class="n-footer"><div class="n-footer-grid">' +  
+                '<div><h4>About NEURON</h4><p>Produced monthly by the Northwell Health Neurology Residents with faculty oversight.</p></div>' +  
+                '<div><h4>Editorial Board</h4><ul><li>Editor: ' + d(data.masthead.editor,'[Name]') + '</li><li>Faculty: ' + d(data.masthead.facultyAdvisor,'[Name]') + '</li><li>PD: ' + d(data.pd.name,'[Name]') + '</li></ul></div>' +  
+                '<div><h4>Contact</h4><ul><li>📧 ' + d(data.masthead.email,'neuron@northwell.edu') + '</li></ul></div>' +  
+            '</div><div class="n-footer-bottom"><span>© ' + data.masthead.year + ' Northwell Health — Neurology Residency</span></div></div>';  
     }
 
-    // ═══════════════════════════════════════════════════════  
-    // SECTION NAVIGATION  
-    // ═══════════════════════════════════════════════════════  
     function switchSection(section) {  
-        currentSection = section;
-
-        document.querySelectorAll('.sidebar-item').forEach(el => {  
-            el.classList.toggle('active', el.dataset.section === section);  
-        });
-
+        currentSection = section;  
+        var items = document.querySelectorAll('.sidebar-item');  
+        for (var i = 0; i < items.length; i++) {  
+            if (items[i].getAttribute('data-section') === section) {  
+                items[i].classList.add('active');  
+            } else {  
+                items[i].classList.remove('active');  
+            }  
+        }  
         renderEditor(section);  
     }
 
-    // ═══════════════════════════════════════════════════════  
-    // STATUS INDICATORS  
-    // ═══════════════════════════════════════════════════════  
     function updateStatusIndicators() {  
-        const checks = {  
+        var checks = {  
             masthead: [data.masthead.title, data.masthead.editor, data.masthead.volume],  
             pd: [data.pd.name, data.pd.topicTitle, data.pd.paragraph1],  
             chief: [data.chief.name, data.chief.topicTitle, data.chief.paragraph1],  
             theme: [data.theme.specialty, data.theme.topicTitle, data.theme.paragraph1],  
-            residentChoice: [data.residentChoice.residentName, data.residentChoice.topicTitle, data.residentChoice.paragraph1],
+            residentChoice: [data.residentChoice.residentName, data.residentChoice.topicTitle, data.residentChoice.paragraph1],  
             tech: [data.tech.featureTitle, data.tech.paragraph1],  
-            events: [data.events.some(e => e.title.trim()) ? 'yes' : '']
+            events: [data.events.some(function(e) { return e.title.trim(); }) ? 'yes' : '']  
         };
 
-        let filled = 0;  
-        const total = Object.keys(checks).length;
+        var filled = 0;  
+        var total = 7;  
+        var sections = ['masthead','pd','chief','theme','residentChoice','tech','events'];
 
-        Object.entries(checks).forEach(([section, fields]) => {  
-            const el = document.getElementById(`status-${section}`);  
-            if (!el) return;
-            const filledFields = fields.filter(f => f && String(f).trim()).length;  
-            const totalFields = fields.length;
-
-            if (filledFields === totalFields) {  
+        for (var s = 0; s < sections.length; s++) {  
+            var key = sections[s];  
+            var el = document.getElementById('status-' + key);  
+            if (!el) continue;  
+            var fields = checks[key];  
+            var filledFields = 0;  
+            for (var f = 0; f < fields.length; f++) {  
+                if (fields[f] && String(fields[f]).trim()) filledFields++;  
+            }  
+            if (filledFields === fields.length) {  
                 el.className = 'item-status filled';  
                 filled++;  
             } else if (filledFields > 0) {  
@@ -1679,22 +1346,21 @@
             } else {  
                 el.className = 'item-status empty';  
             }  
-        });
+        }
 
-        document.getElementById('completionText').textContent = `${filled} of ${total} sections complete`;  
-        document.getElementById('progressFill').style.width = `${(filled / total) * 100}%`;  
+        var ct = document.getElementById('completionText');  
+        if (ct) ct.textContent = filled + ' of ' + total + ' sections complete';  
+        var pf = document.getElementById('progressFill');  
+        if (pf) pf.style.width = ((filled / total) * 100) + '%';  
     }
 
-    // ═══════════════════════════════════════════════════════  
-    // SAVE / LOAD / EXPORT  
-    // ═══════════════════════════════════════════════════════  
     function autoSave() {  
         try {  
             localStorage.setItem('neuron-editor-data', JSON.stringify(data));  
-            const indicator = document.getElementById('saveIndicator');  
+            var indicator = document.getElementById('saveIndicator');  
             indicator.classList.add('visible');  
-            setTimeout(() => indicator.classList.remove('visible'), 2000);  
-        } catch(e) { /* silent */ }  
+            setTimeout(function() { indicator.classList.remove('visible'); }, 2000);  
+        } catch(e) {}  
     }
 
     function saveData() {  
@@ -1708,9 +1374,28 @@
 
     function loadSavedData() {  
         try {  
-            const saved = localStorage.getItem('neuron-editor-data');  
+            var saved = localStorage.getItem('neuron-editor-data');  
             if (saved) {  
-                data = JSON.parse(saved);  
+                var parsed = JSON.parse(saved);  
+                var keys = Object.keys(data);  
+                for (var i = 0; i < keys.length; i++) {  
+                    var key = keys[i];  
+                    if (parsed[key]) {  
+                        if (Array.isArray(data[key])) {  
+                            data[key] = parsed[key];  
+                        } else if (typeof data[key] === 'object') {  
+                            var subkeys = Object.keys(data[key]);  
+                            for (var j = 0; j < subkeys.length; j++) {  
+                                if (parsed[key][subkeys[j]] !== undefined) {  
+                                    data[key][subkeys[j]] = parsed[key][subkeys[j]];  
+                                }  
+                            }  
+                        } else {  
+                            data[key] = parsed[key];  
+                        }  
+                    }  
+                }  
+                ensureReadingData();  
                 renderEditor(currentSection);  
                 renderPreview();  
                 updateStatusIndicators();  
@@ -1731,13 +1416,13 @@
     }
 
     function exportHTML() {  
-        const previewContent = document.getElementById('previewFrame').innerHTML;  
-        const fullHTML = generateExportHTML(previewContent);  
-        const blob = new Blob([fullHTML], { type: 'text/html' });  
-        const url = URL.createObjectURL(blob);  
-        const a = document.createElement('a');  
+        var previewContent = document.getElementById('previewFrame').innerHTML;  
+        var fullHTML = generateExportHTML(previewContent);  
+        var blob = new Blob([fullHTML], { type: 'text/html' });  
+        var url = URL.createObjectURL(blob);  
+        var a = document.createElement('a');  
         a.href = url;  
-        a.download = `NEURON_${data.masthead.month}_${data.masthead.year}.html`;  
+        a.download = 'NEURON_' + data.masthead.month + '_' + data.masthead.year + '.html';  
         document.body.appendChild(a);  
         a.click();  
         document.body.removeChild(a);  
@@ -1746,97 +1431,88 @@
     }
 
     function generateExportHTML(content) {  
-        return `<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>${data.masthead.title} — ${data.masthead.month} ${data.masthead.year}</title>  
-<style>  
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');  
-*{margin:0;padding:0;box-sizing:border-box}  
-body{font-family:'Inter',-apple-system,sans-serif;background:#faf9f6;color:#1a202c;line-height:1.7;-webkit-font-smoothing:antialiased}  
-.n-masthead{background:linear-gradient(135deg,#1a365d 0%,#2c5282 50%,#2b6cb0 100%);position:relative;overflow:hidden}  
-.n-masthead::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}  
-.n-masthead-content{padding:60px 32px 50px;text-align:center;position:relative;max-width:900px;margin:0 auto}  
-.n-masthead-emoji{font-size:48px;margin-bottom:14px;display:block}  
-.n-masthead-title{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,60px);font-weight:900;color:#fff;letter-spacing:6px;margin-bottom:4px}  
-.n-masthead-subtitle{font-size:12px;color:rgba(255,255,255,.65);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px}  
-.n-masthead-meta{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.55)}  
-.n-body{max-width:900px;margin:0 auto;padding:32px 24px 60px}  
-.n-card{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #edf2f7;margin-bottom:24px;overflow:hidden}  
-.n-card-header{padding:24px 28px 18px;border-bottom:1px solid #edf2f7;display:flex;align-items:flex-start;gap:14px}  
-.n-card-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}  
-.n-icon-blue{background:#ebf4ff}.n-icon-gold{background:#fffff0}.n-icon-teal{background:#e6fffa}.n-icon-purple{background:#faf5ff}.n-icon-green{background:#f0fff4}.n-icon-red{background:#fff5f5}.n-icon-gray{background:#f7fafc}  
-.n-card-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:800;color:#1a202c;margin-bottom:2px}  
-.n-card-subtitle{font-size:12px;color:#718096}  
-.n-card-body{padding:20px 28px 24px}  
-.n-card-body p{font-size:14px;color:#4a5568;line-height:1.7;margin-bottom:12px}  
-.n-card-body p:last-child{margin-bottom:0}  
-.n-byline{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #edf2f7}  
-.n-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1a365d,#2c5282);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px}  
-.n-byline-name{font-weight:600;font-size:13px;color:#1a202c}  
-.n-byline-role{font-size:11px;color:#718096}  
-.n-callout{border-radius:8px;padding:14px 18px;margin:14px 0;font-size:13px;line-height:1.6}  
-.n-callout strong{display:block;margin-bottom:4px}  
-.n-callout-blue{background:#ebf8ff;border-left:4px solid #3182ce;color:#2c5282}  
-.n-callout-gold{background:#fffff0;border-left:4px solid #d69e2e;color:#744210}  
-.n-callout-green{background:#f0fff4;border-left:4px solid #38a169;color:#22543d}  
-.n-callout-purple{background:#faf5ff;border-left:4px solid #805ad5;color:#44337a}  
-.n-announcement-list{list-style:none;padding:0}  
-.n-announcement-list li{padding:8px 0;border-bottom:1px solid #edf2f7;font-size:13px;color:#4a5568;display:flex;align-items:flex-start;gap:10px}  
-.n-announcement-list li:last-child{border-bottom:none}  
-.n-announcement-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:#2c5282;flex-shrink:0;margin-top:7px}  
-.n-topic-title{font-size:15px;margin-bottom:10px;color:#1a202c}  
-.n-event-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #edf2f7;align-items:flex-start}  
-.n-event-item:last-child{border-bottom:none}  
-.n-event-date{background:#1a365d;color:#fff;border-radius:6px;padding:6px 10px;text-align:center;flex-shrink:0;min-width:48px}  
-.n-event-day{font-size:18px;font-weight:800;line-height:1}.n-event-month-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;opacity:.8}  
-.n-event-title{font-weight:600;font-size:13px;color:#1a202c}.n-event-desc{font-size:12px;color:#718096}  
-.n-divider{display:flex;align-items:center;gap:14px;margin:20px 0;color:#718096;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:600}  
-.n-divider::before,.n-divider::after{content:'';flex:1;height:1px;background:#e2e8f0}  
-.n-footer{background:#1a365d;color:rgba(255,255,255,.65);padding:32px 28px}  
-.n-footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px;max-width:900px;margin-left:auto;margin-right:auto}  
-.n-footer h4{color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}  
-.n-footer p,.n-footer li{font-size:12px;line-height:1.8}  
-.n-footer ul{list-style:none;padding:0}  
-.n-footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;display:flex;justify-content:space-between;font-size:11px;max-width:900px;margin:0 auto}  
-@media(max-width:640px){.n-footer-grid{grid-template-columns:1fr}.n-masthead-content{padding:40px 20px 32px}.n-body{padding:20px 16px 40px}.n-card-header{padding:18px 20px 14px}.n-card-body{padding:16px 20px 20px}}  
-</style>  
-</head>  
-<body>${content}</body></html>`;  
+        return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>' + data.masthead.title + ' — ' + data.masthead.month + ' ' + data.masthead.year + '</title><style>' +  
+        "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');" +  
+        "*{margin:0;padding:0;box-sizing:border-box}" +  
+        "body{font-family:'Inter',-apple-system,sans-serif;background:#faf9f6;color:#1a202c;line-height:1.7}" +  
+        ".n-masthead{background:linear-gradient(135deg,#1a365d 0%,#2c5282 50%,#2b6cb0 100%);position:relative;overflow:hidden}" +  
+        ".n-masthead-content{padding:60px 32px 50px;text-align:center;position:relative;max-width:900px;margin:0 auto}" +  
+        ".n-masthead-emoji{font-size:48px;margin-bottom:14px;display:block}" +  
+        ".n-masthead-title{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,60px);font-weight:900;color:#fff;letter-spacing:6px;margin-bottom:4px}" +  
+        ".n-masthead-subtitle{font-size:12px;color:rgba(255,255,255,.65);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px}" +  
+        ".n-masthead-meta{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.55)}" +  
+        ".n-body{max-width:900px;margin:0 auto;padding:32px 24px 60px}" +  
+        ".n-card{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #edf2f7;margin-bottom:24px;overflow:hidden}" +  
+        ".n-card-header{padding:24px 28px 18px;border-bottom:1px solid #edf2f7;display:flex;align-items:flex-start;gap:14px}" +  
+        ".n-card-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}" +  
+        ".n-icon-blue{background:#ebf4ff}.n-icon-gold{background:#fffff0}.n-icon-teal{background:#e6fffa}.n-icon-purple{background:#faf5ff}" +  
+        ".n-card-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:800;color:#1a202c;margin-bottom:2px}" +  
+        ".n-card-subtitle{font-size:12px;color:#718096}" +  
+        ".n-card-body{padding:20px 28px 24px}" +  
+        ".n-card-body p{font-size:14px;color:#4a5568;line-height:1.7;margin-bottom:12px}" +  
+        ".n-byline{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #edf2f7}" +  
+        ".n-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#1a365d,#2c5282);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px}" +  
+        ".n-byline-name{font-weight:600;font-size:13px;color:#1a202c}" +  
+        ".n-byline-role{font-size:11px;color:#718096}" +  
+        ".n-callout{border-radius:8px;padding:14px 18px;margin:14px 0;font-size:13px;line-height:1.6}" +  
+        ".n-callout strong{display:block;margin-bottom:4px}" +  
+        ".n-callout-blue{background:#ebf8ff;border-left:4px solid #3182ce;color:#2c5282}" +  
+        ".n-callout-gold{background:#fffff0;border-left:4px solid #d69e2e;color:#744210}" +  
+        ".n-callout-green{background:#f0fff4;border-left:4px solid #38a169;color:#22543d}" +  
+        ".n-announcement-list{list-style:none;padding:0}" +  
+        ".n-announcement-list li{padding:8px 0;border-bottom:1px solid #edf2f7;font-size:13px;color:#4a5568;display:flex;align-items:flex-start;gap:10px}" +  
+        ".n-announcement-list li:last-child{border-bottom:none}" +  
+        ".n-announcement-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:#2c5282;flex-shrink:0;margin-top:7px}" +  
+        ".n-topic-title{font-size:15px;margin-bottom:10px;color:#1a202c}" +  
+        ".n-divider{display:flex;align-items:center;gap:14px;margin:20px 0;color:#718096;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:600}" +  
+        ".n-divider::before,.n-divider::after{content:'';flex:1;height:1px;background:#e2e8f0}" +  
+        ".n-reading-list{margin-top:18px}" +  
+        ".n-reading-item{padding:10px 0 10px 14px;border-left:3px solid #319795;margin-bottom:10px}" +  
+        ".n-reading-title{font-weight:600;font-size:13px;color:#1a365d}" +  
+        ".n-reading-title a{color:#1a365d;text-decoration:none}" +  
+        ".n-reading-meta{font-size:11px;color:#718096;font-style:italic}" +  
+        ".n-reading-annotation{font-size:12px;color:#4a5568;margin-top:2px}" +  
+        ".n-event-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #edf2f7;align-items:flex-start}" +  
+        ".n-event-item:last-child{border-bottom:none}" +  
+        ".n-event-date{background:#1a365d;color:#fff;border-radius:6px;padding:6px 10px;text-align:center;flex-shrink:0;min-width:48px}" +  
+        ".n-event-day{font-size:18px;font-weight:800;line-height:1}" +  
+        ".n-event-month-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;opacity:.8}" +  
+        ".n-event-title{font-weight:600;font-size:13px;color:#1a202c}" +  
+        ".n-event-desc{font-size:12px;color:#718096}" +  
+        ".n-footer{background:#1a365d;color:rgba(255,255,255,.65);padding:32px 28px}" +  
+        ".n-footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px;max-width:900px;margin-left:auto;margin-right:auto}" +  
+        ".n-footer h4{color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}" +  
+        ".n-footer p,.n-footer li{font-size:12px;line-height:1.8}" +  
+        ".n-footer ul{list-style:none;padding:0}" +  
+        ".n-footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;display:flex;justify-content:space-between;font-size:11px;max-width:900px;margin:0 auto}" +  
+        "</style></head><body>" + content + "</body></html>";  
     }
 
-    // ═══════════════════════════════════════════════════════  
-    // PREVIEW SCALE & TOAST  
-    // ═══════════════════════════════════════════════════════  
     function setPreviewScale(scale, btn) {  
-        const frame = document.getElementById('previewFrame');  
-        frame.style.transform = `scale(${scale})`;  
-        frame.style.width = `${100 / scale}%`;  
-        frame.style.marginBottom = `${(scale - 1) * 100}%`;  
-
-        document.querySelectorAll('.preview-scale-btn').forEach(b => b.classList.remove('active'));  
+        var frame = document.getElementById('previewFrame');  
+        frame.style.transform = 'scale(' + scale + ')';  
+        frame.style.width = (100 / scale) + '%';  
+        frame.style.marginBottom = ((scale - 1) * 100) + '%';  
+        var btns = document.querySelectorAll('.preview-scale-btn');  
+        for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');  
         btn.classList.add('active');  
     }
 
-    function showToast(message, type = 'success') {  
-        const toast = document.getElementById('toast');  
+    function showToast(message, type) {  
+        var toast = document.getElementById('toast');  
         toast.textContent = message;  
-        toast.className = `toast ${type} visible`;  
-        setTimeout(() => toast.classList.remove('visible'), 3000);  
+        toast.className = 'toast ' + (type || 'success') + ' visible';  
+        setTimeout(function() { toast.classList.remove('visible'); }, 3000);  
     }
 
-    // ═══════════════════════════════════════════════════════  
-    // PANE RESIZER  
-    // ═══════════════════════════════════════════════════════  
+    // Pane resizer  
     (function() {  
-        const resizer = document.getElementById('paneResizer');  
-        const editorPane = document.getElementById('editorPane');  
-        const previewPane = document.getElementById('previewPane');  
-        let isResizing = false;
+        var resizer = document.getElementById('paneResizer');  
+        var editorPane = document.getElementById('editorPane');  
+        var previewPane = document.getElementById('previewPane');  
+        var isResizing = false;
 
-        resizer.addEventListener('mousedown', (e) => {  
+        resizer.addEventListener('mousedown', function(e) {  
             isResizing = true;  
             resizer.classList.add('dragging');  
             document.body.style.cursor = 'col-resize';  
@@ -1844,14 +1520,13 @@ body{font-family:'Inter',-apple-system,sans-serif;background:#faf9f6;color:#1a20
             e.preventDefault();  
         });
 
-        document.addEventListener('mousemove', (e) => {  
+        document.addEventListener('mousemove', function(e) {  
             if (!isResizing) return;  
-            const sidebar = document.querySelector('.sidebar');  
-            const sidebarWidth = sidebar ? sidebar.offsetWidth : 0;  
-            const totalWidth = window.innerWidth - sidebarWidth - 6;  
-            const editorWidth = e.clientX - sidebarWidth;  
-            const minWidth = 300;
-
+            var sidebar = document.querySelector('.sidebar');  
+            var sidebarWidth = sidebar ? sidebar.offsetWidth : 0;  
+            var totalWidth = window.innerWidth - sidebarWidth - 6;  
+            var editorWidth = e.clientX - sidebarWidth;  
+            var minWidth = 300;  
             if (editorWidth > minWidth && (totalWidth - editorWidth) > minWidth) {  
                 editorPane.style.flex = 'none';  
                 editorPane.style.width = editorWidth + 'px';  
@@ -1859,7 +1534,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:#faf9f6;color:#1a20
             }  
         });
 
-        document.addEventListener('mouseup', () => {  
+        document.addEventListener('mouseup', function() {  
             if (isResizing) {  
                 isResizing = false;  
                 resizer.classList.remove('dragging');  
@@ -1869,61 +1544,66 @@ body{font-family:'Inter',-apple-system,sans-serif;background:#faf9f6;color:#1a20
         });  
     })();
 
-    // ═══════════════════════════════════════════════════════  
-    // INITIALIZATION  
-    // ═══════════════════════════════════════════════════════  
+    // Init  
     (function init() {  
         try {  
-            const saved = localStorage.getItem('neuron-editor-data');  
+            var saved = localStorage.getItem('neuron-editor-data');  
             if (saved) {  
-                const parsed = JSON.parse(saved);  
-                Object.keys(data).forEach(key => {  
+                var parsed = JSON.parse(saved);  
+                var keys = Object.keys(data);  
+                for (var i = 0; i < keys.length; i++) {  
+                    var key = keys[i];  
                     if (parsed[key]) {  
                         if (Array.isArray(data[key])) {  
                             data[key] = parsed[key];  
                         } else if (typeof data[key] === 'object') {  
-                            data[key] = { ...data[key], ...parsed[key] };  
+                            var subkeys = Object.keys(data[key]);  
+                            for (var j = 0; j < subkeys.length; j++) {  
+                                if (parsed[key][subkeys[j]] !== undefined) {  
+                                    data[key][subkeys[j]] = parsed[key][subkeys[j]];  
+                                }  
+                            }  
                         } else {  
                             data[key] = parsed[key];  
                         }  
                     }  
-                });  
+                }  
             }  
-        } catch(e) { /* use defaults */ }
+        } catch(e) {}
 
+        ensureReadingData();  
         renderEditor('masthead');  
         renderPreview();  
         updateStatusIndicators();  
     })();  
     </script>  
-<script>
-const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbxp0l_KTaP1MojVqYbGA8soj4XEqv_YI3l1iHCxROHpU_gHroT1BQGFqSYLvXsUpfAk/exec';
+    <script>  
+    var BACKEND_URL = 'https://script.google.com/macros/s/AKfycbxp0l_KTaP1MojVqYbGA8soj4XEqv_YI3l1iHCxROHpU_gHroT1BQGFqSYLvXsUpfAk/exec';
 
-async function submitFeedback(payload) {
-    try {
-        const response = await fetch(BACKEND_URL, {
-            method: 'POST',
-            mode: 'no-cors', // Standard cross-origin handling for Google Apps Script
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-        alert('Thank you! Your submission has been logged.');
-    } catch (err) {
-        console.error('Submission error:', err);
-        alert('There was an error logging your response. Please try again.');
+    function submitFeedback(payload) {  
+        fetch(BACKEND_URL, {  
+            method: 'POST',  
+            mode: 'no-cors',  
+            headers: { 'Content-Type': 'application/json' },  
+            body: JSON.stringify(payload)  
+        }).then(function() {  
+            alert('Thank you! Your submission has been logged.');  
+        }).catch(function(err) {  
+            console.error('Submission error:', err);  
+            alert('There was an error logging your response. Please try again.');  
+        });  
     }
-}
 
-function handleInquirySubmit(category, message, email) {
-    submitFeedback({
-        type: 'feedback',
-        month: data.masthead.month || 'July',
-        year: data.masthead.year || '2026',
-        category: category,
-        message: message,
-        email: email
-    });
-}
-</script>
+    function handleInquirySubmit(category, message, email) {  
+        submitFeedback({  
+            type: 'feedback',  
+            month: data.masthead.month || 'July',  
+            year: data.masthead.year || '2026',  
+            category: category,  
+            message: message,  
+            email: email  
+        });  
+    }  
+    </script>  
 </body>  
-</html>
+</html>   
